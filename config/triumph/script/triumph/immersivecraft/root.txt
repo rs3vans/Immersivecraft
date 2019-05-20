@@ -1,0 +1,23 @@
+
+//This is a root advancement. It is the base advancement for a page. As such, it has no parent and has to set a background.
+
+//Set icon item
+setIcon(<minecraft:paper>)
+
+//Set title String
+setTitle("Hi, I'm an Achievement!")
+
+//Set description String
+setDescription("You just earned me!")
+
+//Set background String. This is a path to any texture in a resource pack, so you can set it to fun things.
+setBackground("immersiveengineering:textures/blocks/stone_device_allloy_smelter_bottom.png")
+
+//Set the toast notification in the top right corner of the screen to not show up when this advancement is achieved.
+setShowToast(false)
+
+//Set the advancement to not send a chat message when it is achieved.
+setAnnounceToChat(false)
+
+//Adds a single location criteria. Since this has nothing specific set, it will be completed the instant the player is added to the world, thus unlocking the page instantly.
+addCriteria("location", "minecraft:location")

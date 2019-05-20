@@ -1,0 +1,31 @@
+{
+  "overrides": [
+    {
+      "itemID": "minecraft:iron_pickaxe",
+      "speed": 4,
+      "limit": 16,
+      "range": 10,
+      "exaustion": 0.3,
+      "experience": 0,
+      "gamestage": ""
+    },
+    {
+      "itemID": "immersiveengineering:pickaxe_steel",
+      "speed": 8,
+      "limit": 32,
+      "range": 20,
+      "exaustion": 0.2,
+      "experience": 0,
+      "gamestage": ""
+    },
+    {
+      "itemID": "immersiveengineering:drill",
+      "speed": 16,
+      "limit": 64,
+      "range": 40,
+      "exaustion": 0.1,
+      "experience": 0,
+      "gamestage": ""
+    }
+  ]
+}

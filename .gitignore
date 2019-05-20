@@ -1,0 +1,14 @@
+.DS_Store
+TombManyGraves/
+bendspacks/
+crafttweaker.log
+crash-reports/
+journeymap/
+logs/
+minecraftinstance.json
+mods/memory_repo/
+options.txt
+resources/
+saves/
+usercache.json
+usernamecache.json
