@@ -29,7 +29,10 @@ recipes.removeShapeless(<minecraft:blaze_powder>,
 furnace.remove(<minecraft:quartz>);
 JEI.removeAndHide(<minecraft:quartz_ore>);
 
-// Remove wooden & stone tools (+ quark sillyness w/ flint)
+// Diamond Heart rename
+<quark:diamond_heart>.displayName = "Chorus Diamond Nano Core";
+
+// Remove vanilla tools (+ quark sillyness w/ flint)
 JEI.removeAndHide(<minecraft:wooden_axe>);
 JEI.removeAndHide(<minecraft:wooden_pickaxe>);
 JEI.removeAndHide(<minecraft:wooden_shovel>);
@@ -40,23 +43,27 @@ JEI.removeAndHide(<minecraft:stone_pickaxe>);
 JEI.removeAndHide(<minecraft:stone_shovel>);
 JEI.removeAndHide(<minecraft:stone_sword>);
 JEI.removeAndHide(<minecraft:stone_hoe>);
+JEI.removeAndHide(<minecraft:iron_axe>);
+JEI.removeAndHide(<minecraft:iron_pickaxe>);
+JEI.removeAndHide(<minecraft:iron_shovel>);
+JEI.removeAndHide(<minecraft:iron_sword>);
+JEI.removeAndHide(<minecraft:iron_hoe>);
+JEI.removeAndHide(<minecraft:golden_axe>);
+JEI.removeAndHide(<minecraft:golden_pickaxe>);
+JEI.removeAndHide(<minecraft:golden_shovel>);
+JEI.removeAndHide(<minecraft:golden_sword>);
+JEI.removeAndHide(<minecraft:golden_hoe>);
+JEI.removeAndHide(<minecraft:diamond_axe>);
+JEI.removeAndHide(<minecraft:diamond_pickaxe>);
+JEI.removeAndHide(<minecraft:diamond_shovel>);
+JEI.removeAndHide(<minecraft:diamond_sword>);
+JEI.removeAndHide(<minecraft:diamond_hoe>);
+JEI.removeAndHide(<minecraft:bow>);
 recipes.removeByRecipeName("quark:stone_axe");
 recipes.removeByRecipeName("quark:stone_pickaxe");
 recipes.removeByRecipeName("quark:stone_shovel");
 recipes.removeByRecipeName("quark:stone_sword");
 recipes.removeByRecipeName("quark:stone_hoe");
-
-// Fix flint tools
-// TODO hoe
-// TODO pickaxe
-recipes.addShaped("flintmod/spade", <flintmod:spade_flint>,
-    [ [ null,            <flintmod:tool_part_flint>, <flintmod:tool_part_flint> ],
-      [ null,            <ore:stickWood>,            <flintmod:tool_part_flint> ],
-      [ <ore:stickWood>, null,                       null                       ] ]);
-recipes.addShaped("flintmod/axe", <flintmod:axe_flint>,
-    [ [ <flintmod:tool_part_flint>, <ore:itemRawFlint>, null ],
-      [ <flintmod:tool_part_flint>, <ore:stickWood>,    null ],
-      [ null,                       <ore:stickWood>,    null ] ]);
 
 // Remove The One Probe items
 recipes.remove(<theoneprobe:probe>);

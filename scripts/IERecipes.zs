@@ -1,3 +1,4 @@
+import mods.jei.JEI;
 import mods.immersiveengineering.AlloySmelter;
 import mods.immersiveengineering.BlastFurnace;
 import mods.immersiveengineering.CokeOven;
@@ -24,17 +25,11 @@ val netherrackOre = <ore:netherrack>;
 val netherBrick = <minecraft:netherbrick>;
 val netherBrickOre = <ore:ingotBrickNether>;
 val netherBrickBlk = <minecraft:nether_brick>;
-val redNetherBrickBlk = <minecraft:red_nether_brick>;
 val netherWart = <minecraft:nether_wart>;
 val netherWartOre = <ore:cropNetherWart>;
-furnace.remove(netherBrick);
-recipes.remove(netherBrickBlk);
-recipes.remove(redNetherBrickBlk);
 AlloySmelter.addRecipe(netherrack, cobblestoneOre, netherWartOre, 40);
-AlloySmelter.addRecipe(netherBrick, netherrackOre, netherrackOre, 240);
-AlloySmelter.addRecipe(netherWart, netherrackOre * 4, mushroom, 240);
-AlloySmelter.addRecipe(netherBrickBlk, netherBrickOre * 2, netherBrickOre * 2, 240);
-AlloySmelter.addRecipe(redNetherBrickBlk, netherBrickOre * 2, netherWartOre * 2, 280);
+//AlloySmelter.addRecipe(netherWart, netherrackOre * 4, mushroom, 240);
+//AlloySmelter.addRecipe(netherBrickBlk, netherBrickOre * 2, netherBrickOre * 2, 240);
 
 // Slime balls
 Squeezer.addRecipe(<minecraft:slime_ball>, <liquid:water> * 250, <minecraft:cactus>, 2048);
@@ -48,8 +43,8 @@ AlloySmelter.addRecipe(<minecraft:glowstone_dust> * 3, <minecraft:redstone>, <im
 
 // Ender pearls
 recipes.remove(<minecraft:ender_pearl>);
-AlloySmelter.addRecipe(<minecraft:ender_pearl>, <ore:gemDiamond>, <ore:gemEmerald>, 1200);
-ArcFurnace.addRecipe(<minecraft:ender_pearl> * 2, <ore:gemDiamond>, null, 140, 768, [ <ore:gemEmerald> ]);
+//AlloySmelter.addRecipe(<minecraft:ender_pearl>, <ore:gemDiamond>, <ore:gemEmerald>, 1200);
+//ArcFurnace.addRecipe(<minecraft:ender_pearl> * 2, <ore:gemDiamond>, null, 140, 768, [ <ore:gemEmerald> ]);
 
 // Ender eyes
 recipes.remove(<minecraft:ender_eye>);
@@ -61,15 +56,6 @@ ArcFurnace.addRecipe(<minecraft:nether_star>, <minecraft:ender_eye>, null, 6000,
 
 // -- IE Things --
 
-// Blast brick
-val blastBrick = <immersiveengineering:stone_decoration:1>;
-val brick = <ore:ingotBrick>;
-val clay = <minecraft:clay_ball>;
-recipes.remove(blastBrick);
-recipes.addShaped(blastBrick * 3, [[netherBrick, clay,              netherBrick],
-                                   [clay,        redNetherBrickBlk, clay],
-                                   [netherBrick, clay,              netherBrick]]);
-
 // -- Metals --
 
 // Iron
@@ -77,6 +63,7 @@ val ironIngot = <minecraft:iron_ingot>;
 val ironBlock = <minecraft:iron_block>;
 val ironNugget = <minecraft:iron_nugget>;
 val ironNuggetIE = <immersiveengineering:metal:29>;
+val ironGrit = <immersiveengineering:metal:18>;
 furnace.remove(ironIngot);
 furnace.remove(ironNugget);
 recipes.remove(ironIngot);
@@ -278,3 +265,20 @@ MetalPress.addRecipe(steelIngot * 9, <ore:blockSteel>, unpackingMold, 2048);
 val graphiteIngot = <immersiveengineering:material:19>;
 furnace.remove(graphiteIngot);
 BlastFurnace.addRecipe(graphiteIngot, <ore:dustHOPGraphite>, 260);
+
+// -- Multiblocks --
+
+// Blast brick
+val blastBrick = <immersiveengineering:stone_decoration:1>;
+val brick = <ore:ingotBrick>;
+val clay = <minecraft:clay_ball>;
+recipes.remove(blastBrick);
+AlloySmelter.addRecipe(blastBrick, netherBrickBlk, ironGrit, 200);
+
+// -- Tools --
+
+// Remove steel "vanilla" tools
+JEI.removeAndHide(<immersiveengineering:pickaxe_steel>);
+JEI.removeAndHide(<immersiveengineering:axe_steel>);
+JEI.removeAndHide(<immersiveengineering:shovel_steel>);
+JEI.removeAndHide(<immersiveengineering:sword_steel>);

@@ -1,8 +1,10 @@
 {
   "materialMappings": {
-    "blaze_molten": 14,
-    "ender_plate": 11,
-    "ender_dust": 12,
-    "ender_molten": 13
+    "chorus_steel_crystal": 1,
+    "blaze_molten": 0,
+    "chorus_steel_dust": 2,
+    "redstone_nanomaterial_plate": 5,
+    "ender_molten": 3,
+    "redstone_nanomaterial_dense_plate": 4
   }
 }

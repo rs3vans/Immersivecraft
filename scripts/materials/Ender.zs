@@ -11,19 +11,20 @@ val ender = MaterialSystem.getMaterialBuilder()
         .setColor(enderColor)
         .build();
 
-ender.registerParts([ "plate", "dust" ] as string[]);
-
 val moltenEnder = ender.registerPart("molten").getData();
 moltenEnder.addDataValue("temperature", "-400");
 moltenEnder.addDataValue("luminosity", "12");
+
+val enderpearlItem = <item:minecraft:ender_pearl>;
 
 val enderMat = mods.contenttweaker.tconstruct.MaterialBuilder.create("ender");
 enderMat.color = 0x1d5e4c;
 enderMat.craftable = false;
 enderMat.liquid = <liquid:ender>;
 enderMat.castable = true;
-enderMat.representativeItem = <item:minecraft:ender_pearl>;
-enderMat.addHeadMaterialStats(12000, 27.0, 17.0, 4);
+enderMat.representativeItem = enderpearlItem;
+enderMat.addItem(enderpearlItem);
+enderMat.addHeadMaterialStats(1200, 27.0, 17.0, 4);
 
 enderMat.itemLocalizer = function(thisMaterial, itemName) {
     return "Enderite " + itemName;
