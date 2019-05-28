@@ -647,7 +647,6 @@ val lavaDef = <liquid:lava>.definition;
 lavaDef.temperature = 1100;
 
 // Ender stuff
-//Casting.addTableRecipe(<minecraft:gold_ingot>, <minecraft:gold_ingot>, <liquid:enderium>, 250, false, 500);
 Melting.addRecipe(<liquid:ender> * 250, <ore:enderpearl>, 1800);
 Melting.addRecipe(<liquid:ender> * 250, <ore:dustEnder>, 1800);
 Melting.addRecipe(<liquid:ender> * 250, <ore:plateEnder>, 1800);

@@ -9,6 +9,7 @@ import mods.immersiveengineering.ArcFurnace;
 
 val slag = <immersiveengineering:material:7>;
 
+val plateMold = <immersiveengineering:mold>;
 val packingMold2x2 = <immersiveengineering:mold:5>;
 val packingMold3x3 = <immersiveengineering:mold:6>;
 val unpackingMold = <immersiveengineering:mold:7>;
@@ -37,14 +38,51 @@ Squeezer.addRecipe(<minecraft:slime_ball>, <liquid:water> * 250, <minecraft:cact
 // Glowstone
 AlloySmelter.addRecipe(<minecraft:glowstone_dust> * 3, <minecraft:redstone>, <immersiveengineering:metal:16>, 1536);
 
-// Magma ???
-// val magma = <minecraft:magma>;
-// recipes.remove(magma);
+// Diamond Alloy
+val diamondAlloyDustOre = <ore:dustDiamondAlloy>;
+val diamondAlloyIngotOre = <ore:ingotDiamondAlloy>;
+val diamondAlloyBlockOre = <ore:blockDiamondAlloy>;
+val diamondAlloyPlateOre = <ore:plateDiamondAlloy>;
+recipes.addShapeless("iec/diamond_alloy_dust", diamondAlloyDustOre.firstItem,
+        [ <minecraft:blaze_powder>, <ore:dustNickel> ]);
+BlastFurnace.addRecipe(diamondAlloyIngotOre.firstItem, diamondAlloyDustOre, 100);
+AlloySmelter.addRecipe(diamondAlloyIngotOre.firstItem, <minecraft:blaze_powder>, <ore:dustNickel>, 120);
+AlloySmelter.addRecipe(diamondAlloyIngotOre.firstItem, <minecraft:blaze_powder>, <ore:ingotNickel>, 160);
+ArcFurnace.addRecipe(diamondAlloyIngotOre.firstItem, <minecraft:blaze_powder>, null, 100, 512, [ <ore:dustNickel> ]);
+MetalPress.addRecipe(diamondAlloyBlockOre.firstItem, diamondAlloyIngotOre, packingMold3x3, 2048, 9);
+MetalPress.addRecipe(diamondAlloyIngotOre.firstItem * 9, diamondAlloyBlockOre, unpackingMold, 2048);
+
+// Redstone Alloy
+val redstoneAlloyDustOre = <ore:dustRedstoneAlloy>;
+val redstoneAlloyIngotOre = <ore:ingotRedstoneAlloy>;
+val redstoneAlloyBlockOre = <ore:blockRedstoneAlloy>;
+val redstoneAlloyPlateOre = <ore:plateRedstoneAlloy>;
+recipes.addShapeless("iec/restone_alloy_dust", redstoneAlloyDustOre.firstItem,
+        [ <ore:dustRedstone>, <ore:dustNickel> ]);
+BlastFurnace.addRecipe(redstoneAlloyIngotOre.firstItem, redstoneAlloyDustOre, 100);
+AlloySmelter.addRecipe(redstoneAlloyIngotOre.firstItem, <ore:dustRedstone>, <ore:dustNickel>, 120);
+AlloySmelter.addRecipe(redstoneAlloyIngotOre.firstItem, <ore:dustRedstone>, <ore:ingotNickel>, 160);
+ArcFurnace.addRecipe(redstoneAlloyIngotOre.firstItem, <ore:dustRedstone>, null, 100, 512, [ <ore:dustNickel> ]);
+MetalPress.addRecipe(redstoneAlloyBlockOre.firstItem, redstoneAlloyIngotOre, packingMold3x3, 2048, 9);
+MetalPress.addRecipe(redstoneAlloyIngotOre.firstItem * 9, redstoneAlloyBlockOre, unpackingMold, 2048);
+
+// Blazing Alloy
+val blazingAlloyDustOre = <ore:dustBlazingAlloy>;
+val blazingAlloyIngotOre = <ore:ingotBlazingAlloy>;
+val blazingAlloyBlockOre = <ore:blockBlazingAlloy>;
+val blazingAlloyPlateOre = <ore:plateBlazingAlloy>;
+recipes.addShapeless("iec/blazing_alloy_dust", blazingAlloyDustOre.firstItem,
+        [ <minecraft:blaze_powder>, <ore:dustNickel> ]);
+BlastFurnace.addRecipe(blazingAlloyIngotOre.firstItem, blazingAlloyDustOre, 100);
+AlloySmelter.addRecipe(blazingAlloyIngotOre.firstItem, <minecraft:blaze_powder>, <ore:dustNickel>, 120);
+AlloySmelter.addRecipe(blazingAlloyIngotOre.firstItem, <minecraft:blaze_powder>, <ore:ingotNickel>, 160);
+ArcFurnace.addRecipe(blazingAlloyIngotOre.firstItem, <minecraft:blaze_powder>, null, 100, 512, [ <ore:dustNickel> ]);
+MetalPress.addRecipe(blazingAlloyBlockOre.firstItem, blazingAlloyIngotOre, packingMold3x3, 2048, 9);
+MetalPress.addRecipe(blazingAlloyIngotOre.firstItem * 9, blazingAlloyBlockOre, unpackingMold, 2048);
 
 // Ender pearls
 recipes.remove(<minecraft:ender_pearl>);
-//AlloySmelter.addRecipe(<minecraft:ender_pearl>, <ore:gemDiamond>, <ore:gemEmerald>, 1200);
-//ArcFurnace.addRecipe(<minecraft:ender_pearl> * 2, <ore:gemDiamond>, null, 140, 768, [ <ore:gemEmerald> ]);
+// TODO ???
 
 // Ender eyes
 recipes.remove(<minecraft:ender_eye>);
@@ -53,6 +91,9 @@ ArcFurnace.addRecipe(<minecraft:ender_eye>, <ore:enderpearl>, null, 180, 1024, [
 
 // Nether Star
 ArcFurnace.addRecipe(<minecraft:nether_star>, <minecraft:ender_eye>, null, 6000, 768, [ <ore:gemQuartz> * 64 ]);
+
+// Nano Core stuff
+MetalPress.addRecipe(<ore:plateDenseDiamondAlloy>.firstItem, <ore:plateDiamondAlloy>, packingMold3x3, 36864, 9);
 
 // -- IE Things --
 

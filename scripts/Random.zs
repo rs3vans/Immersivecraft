@@ -1,19 +1,19 @@
 import mods.jei.JEI;
 
 // 1 Snow Block to 4 Snow Balls
-recipes.addShapeless("customvanilla/snow_to_snowballs", <minecraft:snowball> * 4,
+recipes.addShapeless("immc/snow_to_snowballs", <minecraft:snowball> * 4,
     [ <minecraft:snow> ]);
 
 // 2 Logs to 16 Sticks
-recipes.addShapeless("customvanilla/logs_to_sticks", <minecraft:stick> * 16,
+recipes.addShapeless("immc/logs_to_sticks", <minecraft:stick> * 16,
     [ <ore:logWood>, <ore:logWood> ]);
 
 // 3 Gravel to 1 Flint
-recipes.addShapeless("customvanilla/gravel_to_flint", <minecraft:flint>,
+recipes.addShapeless("immc/gravel_to_flint", <minecraft:flint>,
     [ <minecraft:gravel>, <minecraft:gravel>, <minecraft:gravel> ]);
 
 // 8 Logs to Chests
-recipes.addShaped("customvanilla/logs_to_chests", <minecraft:chest> * 4,
+recipes.addShaped("immc/logs_to_chests", <minecraft:chest> * 4,
     [ [ <ore:logWood>, <ore:logWood>, <ore:logWood> ],
       [ <ore:logWood>, null,          <ore:logWood> ],
       [ <ore:logWood>, <ore:logWood>, <ore:logWood> ] ]);
@@ -29,8 +29,17 @@ recipes.removeShapeless(<minecraft:blaze_powder>,
 furnace.remove(<minecraft:quartz>);
 JEI.removeAndHide(<minecraft:quartz_ore>);
 
-// Diamond Heart rename
-<quark:diamond_heart>.displayName = "Chorus Diamond Nano Core";
+// Nano core
+<quark:diamond_heart>.displayName = "Nanomaterial Core";
+<ore:casingDiamondAlloy>.firstItem.displayName = "Nanomaterial Core Casing";
+recipes.addShaped("immc/nano_core_casing", <ore:casingDiamondAlloy>.firstItem,
+        [ [ <ore:plateDenseDiamondAlloy>, <ore:ingotUranium>,    <ore:plateDenseDiamondAlloy> ],
+          [ <ore:ingotUranium>,           <minecraft:ender_eye>, <ore:ingotUranium>           ],
+          [ <ore:plateDenseDiamondAlloy>, <ore:ingotUranium>,    <ore:plateDenseDiamondAlloy> ] ]);
+recipes.addShaped("immc/nano_core", <quark:diamond_heart>,
+        [ [ <ore:crystalChorusSteel>, <ore:casingDiamondAlloy>, <ore:crystalChorusSteel> ],
+          [ <ore:casingDiamondAlloy>, <ore:netherStar>,         <ore:casingDiamondAlloy> ],
+          [ <ore:crystalChorusSteel>, <ore:casingDiamondAlloy>, <ore:crystalChorusSteel> ] ]);
 
 // Remove vanilla tools (+ quark sillyness w/ flint)
 JEI.removeAndHide(<minecraft:wooden_axe>);

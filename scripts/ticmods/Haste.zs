@@ -15,13 +15,11 @@ val densePlate = <ore:plateDenseRedstoneNanomaterial>;
 
 // plate
 val core = <quark:diamond_heart>;
-val redstoneCoil = <immersiveengineering:wirecoil:5>;
-val redstoneEngBlk = <immersiveengineering:metal_decoration0:3>;
-val circBoard = <immersiveengineering:material:27>;
+val redstoneAlloyPlate = <ore:plateRedstoneAlloy>;
 recipes.addShaped("tic/redstone_nm_plate", plate.firstItem,
-        [ [ redstoneCoil,   circBoard, redstoneCoil   ],
-          [ redstoneEngBlk, core,      redstoneEngBlk ],
-          [ redstoneCoil,   circBoard, redstoneCoil   ] ]);
+        [ [ redstoneAlloyPlate, redstoneAlloyPlate, redstoneAlloyPlate ],
+          [ redstoneAlloyPlate, core,               redstoneAlloyPlate ],
+          [ redstoneAlloyPlate, redstoneAlloyPlate, redstoneAlloyPlate ] ]);
 
 // dense plate
 val packingMold2x2 = <immersiveengineering:mold:5>;

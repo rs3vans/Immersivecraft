@@ -1,3 +1,9 @@
 {
-  "savedSubBlockNames": {}
+  "savedSubBlockNames": {
+    "0": {
+      "0": "redstone_alloy_block",
+      "1": "blazing_alloy_block",
+      "2": "diamond_alloy_block"
+    }
+  }
 }
