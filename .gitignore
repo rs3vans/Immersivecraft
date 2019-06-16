@@ -8,7 +8,6 @@ logs/
 minecraftinstance.json
 mods/memory_repo/
 options.txt
-resources/
 saves/
 usercache.json
 usernamecache.json
