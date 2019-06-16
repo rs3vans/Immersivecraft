@@ -1,0 +1,11 @@
+setIcon(<geolosys:ore_sample, meta:0>)
+setTitle("Metal Prospects")
+setDescription("Ore samples can be found on the surface, indicating veins of ores below. Mine some ore clusters, which can be ground into grit and then melted...")
+
+hiddenUnless("triumph:immc_start/3_flint_pick")
+
+setRequiresParents()
+addParent("triumph:immc_start/3_flint_pick")
+
+criteria1 = addCriteria("Harvest some ore", "triumph:player_harvest_block")
+criteria1.setBlock(<geolosys:ore>)

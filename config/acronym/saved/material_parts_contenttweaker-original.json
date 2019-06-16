@@ -1,26 +1,11 @@
 {
   "materialMappings": {
-    "diamond_alloy_plate": 19,
-    "redstone_alloy_ingot": 10,
-    "redstone_alloy_dust": 9,
-    "blazing_nanomaterial_plate": 8,
-    "chorus_steel_crystal": 16,
-    "diamond_alloy_dense_plate": 23,
-    "diamond_alloy_casing": 21,
-    "blazing_alloy_block": 5,
-    "blazing_alloy_plate": 4,
-    "redstone_alloy_block": 12,
-    "diamond_alloy_gear": 22,
-    "blazing_alloy_ingot": 3,
+    "obsidian_ender_alloy_dust": 3,
     "blaze_molten": 1,
-    "chorus_steel_dust": 17,
-    "redstone_nanomaterial_plate": 15,
-    "ender_molten": 0,
-    "blazing_alloy_dust": 2,
-    "diamond_alloy_block": 20,
-    "redstone_nanomaterial_dense_plate": 14,
-    "redstone_alloy_plate": 11,
-    "diamond_alloy_ingot": 18,
-    "blazing_nanomaterial_dense_plate": 7
+    "refined_ender_molten": 0,
+    "obsidian_ender_alloy_molten": 5,
+    "diamond_molten": 2,
+    "obsidian_ender_alloy_ingot": 4,
+    "obsidian_ender_alloy_block": 6
   }
 }

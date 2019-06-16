@@ -1,0 +1,14 @@
+setIcon(<tconstruct:materials, meta:0>)
+setTitle("Are you sear-ious?!")
+setDescription("Raw metals by themselves aren't too useful. What if they could be melted down? Craft a melter and a heater to go with it...")
+
+hiddenUnless("triumph:immc_start/3_flint_pick")
+
+setRequiresParents()
+addParent("triumph:immc_start/3_flint_pick")
+
+criteria1 = addCriteria("Acquire a melter", "minecraft:inventory_changed")
+criteria1.addItem(<tcomplement:melter, meta:0>)
+
+criteria2 = addCriteria("Acquire a heater", "minecraft:inventory_changed")
+criteria2.addItem(<tcomplement:melter, meta:8>)

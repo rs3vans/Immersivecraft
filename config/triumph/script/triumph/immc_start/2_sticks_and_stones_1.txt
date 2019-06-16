@@ -1,0 +1,16 @@
+setIcon("minecraft:flint")
+setTitle("... and Stones")
+setDescription("Punching trees not working? There's a tool for that! Find some gravel and harvest or make some flint...")
+
+hiddenUnless("triumph:immc_start/1_punch")
+
+setRequiresParents()
+addParent("triumph:immc_start/1_punch")
+
+setRequirements("any")
+
+criteria1 = addCriteria("Acquire some flint", "minecraft:inventory_changed")
+criteria1.addItem("minecraft:flint")
+
+criteria2 = addCriteria("Acquire some red flint", "minecraft:inventory_changed")
+criteria2.addItem("vanillafoodpantry:red_flint")

@@ -1,0 +1,12 @@
+setIcon("minecraft:log")
+setTitle("Flint meet Wood")
+setDescription("In order to cut down some trees for wood, you'll need to craft a flint hatchet...")
+
+hiddenUnless("triumph:immc_start/1_punch")
+
+setRequiresParents()
+addParent("triumph:immc_start/2_sticks_and_stones_1")
+addParent("triumph:immc_start/2_sticks_and_stones_2")
+
+criteria1 = addCriteria("Acquire a flint hatchet", "minecraft:inventory_changed")
+criteria1.addItem(<tconstruct:hatchet, nbt:{Stats:{AttackSpeedMultiplier:1.0f,MiningSpeed:2.0f,FreeModifiers:0,Durability:132,HarvestLevel:1,Attack:4.0f},TinkerData:{Materials:["wood","flint","wood"],Modifiers:[]}}>)

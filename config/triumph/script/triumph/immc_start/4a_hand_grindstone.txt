@@ -1,0 +1,11 @@
+setIcon(<horsepower:hand_grindstone>)
+setTitle("Freshly Ground")
+setDescription("Craft a hand grindstone in order to process certain materials, such as dyes and metal dusts.")
+
+hiddenUnless("triumph:immc_start/3_flint_pick")
+
+setRequiresParents()
+addParent("triumph:immc_start/3_flint_pick")
+
+criteria1 = addCriteria("Acquire a hand grindstone", "minecraft:inventory_changed")
+criteria1.addItem(<horsepower:hand_grindstone>)

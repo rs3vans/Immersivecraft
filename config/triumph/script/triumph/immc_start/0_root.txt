@@ -1,0 +1,9 @@
+setIcon("minecraft:grass")
+setTitle("Getting Started")
+setDescription("A crude awakening...")
+setBackground("minecraft:textures/blocks/gravel.png")
+setShowToast(false)
+setAnnounceToChat(false)
+
+// automatically completed...
+addCriteria("location", "minecraft:location")

@@ -1,0 +1,31 @@
+setIcon("adchimneys:brick")
+setTitle("Fresh air!")
+setDescription("Tired of all that smoke from your funaces filling up your house, hidey-hole, or dirt hut? Look no further! Craft some brick or cobblestone chimneys and place them on any source of smoke to direct the stuff up and outside!")
+
+hiddenUnless("triumph:immc_start/3_flint_pick")
+
+setRequiresParents()
+addParent("triumph:immc_start/3_flint_pick")
+
+setRequirements("any")
+
+criteria1 = addCriteria("Place a brick chimney", "minecraft:placed_block")
+criteria1.setItem("adchimneys:brick")
+
+criteria2 = addCriteria("Place a cobblestone chimney", "minecraft:placed_block")
+criteria2.setItem("adchimneys:cobblestone")
+
+criteria3 = addCriteria("Place a stone brick chimney", "minecraft:placed_block")
+criteria3.setItem("adchimneys:stonebrick")
+
+criteria4 = addCriteria("Place a precelain brick chimney", "minecraft:placed_block")
+criteria4.setItem("adchimneys:porcelain_brick")
+
+criteria5 = addCriteria("Place a dark brick chimney", "minecraft:placed_block")
+criteria5.setItem("adchimneys:dark_brick")
+
+criteria6 = addCriteria("Place a marine brick chimney", "minecraft:placed_block")
+criteria6.setItem("adchimneys:marine_brick")
+
+criteria7 = addCriteria("Place a monochrome brick chimney", "minecraft:placed_block")
+criteria7.setItem("adchimneys:monochrome_brick")

@@ -1,0 +1,14 @@
+setIcon(<immersiveengineering:tool>)
+setTitle("An engineer's best friend")
+setDescription("You can't be an engineer without a hammer... that's just common sense!")
+setFrameType("CHALLENGE")
+
+hiddenUnless("triumph:immc_start/3_flint_pick")
+
+setRequiresParents()
+addParent("triumph:immc_start/4a_seared_brick")
+
+criteria1 = addCriteria("Acquire the Engineer's Hammer", "minecraft:inventory_changed")
+criteria1.addItem(<immersiveengineering:tool>)
+
+setRewardExperience(15)

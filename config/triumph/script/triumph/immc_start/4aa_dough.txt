@@ -1,0 +1,11 @@
+setIcon(<vanillafoodpantry:flour_portion>)
+setTitle("Dough-Ray-Me")
+setDescription("Wheat can be ground into flour which can be used to craft dough and a number of other food stuffs. Give it a try!")
+
+hiddenUnless("triumph:immc_start/3_flint_pick")
+
+setRequiresParents()
+addParent("triumph:immc_start/4a_hand_grindstone")
+
+criteria1 = addCriteria("Acquire some flour", "minecraft:inventory_changed")
+criteria1.addItem(<vanillafoodpantry:flour_portion>)

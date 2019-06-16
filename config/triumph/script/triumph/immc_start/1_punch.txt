@@ -1,0 +1,32 @@
+setIcon("minecraft:log")
+setTitle("Woodchuck Norris?")
+setDescription("It seems you have an uncontrollable urge to punch a tree... but will it do any good?")
+setFrameType("GOAL")
+
+addParent("triumph:immc_start/0_root")
+
+setRequirements("any")
+
+criteria = addCriteria("Punched a tree trunk", "triumph:left_click_block")
+criteria.setBlock("dynamictrees:trunkshell")
+
+criteria = addCriteria("Punched an oak tree", "triumph:left_click_block")
+criteria.setBlock("dynamictrees:oakbranch")
+
+criteria = addCriteria("Punched a birch tree", "triumph:left_click_block")
+criteria.setBlock("dynamictrees:birchbranch")
+
+criteria = addCriteria("Punched a spruce tree", "triumph:left_click_block")
+criteria.setBlock("dynamictrees:sprucebranch")
+
+criteria = addCriteria("Punched an acacia tree", "triumph:left_click_block")
+criteria.setBlock("dynamictrees:acaciabranch")
+
+criteria = addCriteria("Punched a dark oak tree", "triumph:left_click_block")
+criteria.setBlock("dynamictrees:darkoakbranch")
+
+criteria = addCriteria("Punched a jungle tree", "triumph:left_click_block")
+criteria.setBlock("dynamictrees:junglebranch")
+
+criteria = addCriteria("Punched a fir tree", "triumph:left_click_block")
+criteria.setBlock("dttraverse:firbranch")

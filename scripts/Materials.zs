@@ -3,30 +3,45 @@
 
 import mods.contenttweaker.Color;
 import mods.contenttweaker.MaterialSystem;
+import mods.contenttweaker.conarm.ExtendedMaterialBuilder;
+
+
+val leatherArmorMat = ExtendedMaterialBuilder.create("leather");
+leatherArmorMat.color = 0x632e00;
+leatherArmorMat.craftable = false;
+leatherArmorMat.castable = false;
+leatherArmorMat.addCoreMaterialStats(27.0 as float, 3.0 as float);
+leatherArmorMat.addPlatesMaterialStats(0.5 as float, 37.0 as float, 0.0 as float);
+leatherArmorMat.addTrimMaterialStats(5.0 as float);
+leatherArmorMat.addItem(<item:minecraft:leather>);
+leatherArmorMat.itemLocalizer = function(thisMaterial, itemName) {
+    return "Leather " + itemName;
+};
+leatherArmorMat.localizedName = "Leather";
+leatherArmorMat.register();
 
 // ~~ Ender ~~
 
 val ender = MaterialSystem.getMaterialBuilder()
-        .setName("Ender")
-        .setColor(Color.fromHex("1d5e4c"))
+        .setName("Refined Ender")
+        .setColor(Color.fromHex("4f776c"))
         .build();
+
 val moltenEnder = ender.registerPart("molten").getData();
 moltenEnder.addDataValue("temperature", "-1200");
 moltenEnder.addDataValue("luminosity", "12");
 
-val enderpearlItem = <item:minecraft:ender_pearl>;
-val enderMat = mods.contenttweaker.tconstruct.MaterialBuilder.create("ender");
-enderMat.color = 0x1d5e4c;
+val enderMat = mods.contenttweaker.tconstruct.MaterialBuilder.create("refinedender");
+enderMat.color = 0x4f776c;
 enderMat.craftable = false;
-enderMat.liquid = <liquid:ender>;
+enderMat.liquid = <liquid:refined_ender>;
 enderMat.castable = true;
-enderMat.representativeItem = enderpearlItem;
-enderMat.addItem(enderpearlItem);
-enderMat.addHeadMaterialStats(1200, 27.0, 17.0, 4);
+enderMat.addExtraMaterialStats(120);
+enderMat.addItem(<item:contenttweaker:refined_ender_pearl>);
 enderMat.itemLocalizer = function(thisMaterial, itemName) {
-    return "Enderite " + itemName;
+    return "Refined Ender " + itemName;
 };
-enderMat.localizedName = "Enderite";
+enderMat.localizedName = "Refined Ender";
 enderMat.register();
 
 
@@ -40,49 +55,41 @@ val moltenBlaze = blaze.registerPart("molten").getData();
 moltenBlaze.addDataValue("temperature", "2300");
 moltenBlaze.addDataValue("luminosity", "15");
 
-val blazingAlloy = MaterialSystem.getMaterialBuilder()
-        .setName("Blazing Alloy")
-        .setColor(Color.fromHex("ffb56b"))
+
+// ~~ Diamond ~~
+
+val diamond = MaterialSystem.getMaterialBuilder()
+        .setName("Diamond")
+        .setColor(Color.fromHex("27ddd7"))
         .build();
-blazingAlloy.registerParts([ "dust", "ingot", "plate", "block" ] as string[]);
+val moltenDiamond = diamond.registerPart("molten").getData();
+moltenDiamond.addDataValue("temperature", "900");
+moltenDiamond.addDataValue("luminosity", "1");
 
-val blazingNm = MaterialSystem.getMaterialBuilder()
-        .setName("Blazing Nanomaterial")
-        .setColor(Color.fromHex("ff7f00"))
-        .setHasEffect(true)
+
+// ~~ Obsidian Alloy ~~
+
+val obsidianAlloy = MaterialSystem.getMaterialBuilder()
+        .setName("Obsidian Ender Alloy")
+        .setColor(Color.fromHex("031e18"))
         .build();
-blazingNm.registerParts([ "dense_plate", "plate" ] as string[]);
 
+obsidianAlloy.registerParts([ "dust", "ingot", "block" ] as string[]);
 
-// ~~ Redstone ~~
+val moltenObsidianAlloy = obsidianAlloy.registerPart("molten").getData();
+moltenObsidianAlloy.addDataValue("temperature", "1000");
+moltenObsidianAlloy.addDataValue("luminosity", "12");
 
-val redstoneAlloy = MaterialSystem.getMaterialBuilder()
-        .setName("Redstone Alloy")
-        .setColor(Color.fromHex("ba5d5d"))
-        .build();
-redstoneAlloy.registerParts([ "dust", "ingot", "plate", "block" ] as string[]);
-
-val redstoneNm = MaterialSystem.getMaterialBuilder()
-        .setName("Redstone Nanomaterial")
-        .setColor(Color.fromHex("c10000"))
-        .setHasEffect(true)
-        .build();
-redstoneNm.registerParts([ "dense_plate", "plate" ] as string[]);
-
-
-// ~~ Diamond Alloy ~~
-
-val diamondAlloy = MaterialSystem.getMaterialBuilder()
-        .setName("Diamond Alloy")
-        .setColor(Color.fromHex("94d8e0"))
-        .build();
-diamondAlloy.registerParts([ "dust", "ingot", "plate", "dense_plate", "block", "casing" ] as string[]);
-
-
-// ~~ Chorus Steel ~~
-
-val chorusSteel = MaterialSystem.getMaterialBuilder()
-        .setName("Chorus Steel")
-        .setColor(Color.fromHex("6e5382"))
-        .build();
-chorusSteel.registerParts([ "crystal", "dust" ] as string[]);
+val obsidianAlloyMat = ExtendedMaterialBuilder.create("obsidianenderalloy");
+obsidianAlloyMat.color = 0x031e18;
+obsidianAlloyMat.craftable = false;
+obsidianAlloyMat.liquid = <liquid:obsidian_ender_alloy>;
+obsidianAlloyMat.castable = true;
+obsidianAlloyMat.addHeadMaterialStats(1100, 16.0, 18.0, 4);
+obsidianAlloyMat.addCoreMaterialStats(879.0 as float, 27.0 as float);
+obsidianAlloyMat.addPlatesMaterialStats(2.0 as float, 879.0 as float, 7.0 as float);
+obsidianAlloyMat.itemLocalizer = function(thisMaterial, itemName) {
+    return "Obsidian Ender Alloy " + itemName;
+};
+obsidianAlloyMat.localizedName = "Obsidian Ender Alloy";
+obsidianAlloyMat.register();
