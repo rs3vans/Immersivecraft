@@ -1,0 +1,11 @@
+setIcon(<refinedstorage:importer>)
+setTitle("Input 2.0")
+setDescription("An importer will allow pulling items into your storage network.")
+
+hiddenUnless("triumph:immc/8_storage_control")
+
+setRequiresParents()
+addParent("triumph:immc/9_storage_grid")
+
+criteria1 = addCriteria("Craft an importer", "minecraft:inventory_changed")
+criteria1.addItem(<refinedstorage:importer>)

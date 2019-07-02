@@ -1,0 +1,11 @@
+setIcon(<contenttweaker:hardened_brick>)
+setTitle("Hard Brick Life")
+setDescription("A brick made of clay is hard, but a brick made from an alloy of clay and iron grit is even HARDER...")
+
+hiddenUnless("triumph:immc/5_eng_hammer")
+
+setRequiresParents()
+addParent("triumph:immc/6_alloy_kiln")
+
+criteria1 = addCriteria("Acquire a hardened brick", "minecraft:inventory_changed")
+criteria1.addItem(<contenttweaker:hardened_brick>)

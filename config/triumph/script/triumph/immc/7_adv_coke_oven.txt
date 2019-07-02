@@ -1,0 +1,11 @@
+setIcon(<immersivetech:stone_decoration>)
+setTitle("Why So Slow?")
+setDescription("Coke oven too slow? Try making an Advanced Coke Oven from some steel and reinforced coke bricks. Attaching preheaters to the sides of this multiblock will make it operate twice as fast as the regular coke oven!")
+
+hiddenUnless("triumph:immc/5_eng_hammer")
+
+setRequiresParents()
+addParent("triumph:immc/6_coke_oven")
+
+criteria1 = addCriteria("Make a Coke Oven", "immersiveengineering:multiblock_formed")
+criteria1.setMultiblock("IT:CokeOvenAdvanced")

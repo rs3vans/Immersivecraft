@@ -1,0 +1,14 @@
+setIcon(<refinedstorage:controller>)
+setTitle("Where My Items At?")
+setDescription("In order to get started with your new, computerized storage system, a storage controller is necessary...")
+setFrameType("GOAL")
+
+hiddenUnless("triumph:immc/5_eng_hammer")
+
+setRequiresParents()
+addParent("triumph:immc/7_quartz_iron")
+
+criteria1 = addCriteria("Craft a storage controller", "minecraft:inventory_changed")
+criteria1.addItem(<refinedstorage:controller>)
+
+setRewardExperience(25)

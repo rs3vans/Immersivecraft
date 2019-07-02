@@ -1,4 +1,5 @@
 #modloaded vanillafoodpantry
+#modloaded immersiveengineering
 #modloaded immersivetech
 #modloaded dynamictrees
 #modloaded dttraverse
@@ -38,3 +39,9 @@ recipes.addShaped("immc/milkdrink_clay", <vanillafoodpantry:milkdrink> * 4,
         [ [ <ceramics:clay_bucket>.withTag({fluids:{FluidName:"milk",Amount:1000}}).transformReplace(<ceramics:clay_bucket>), null ],
           [ <ore:itemEmptyBottle>, <ore:itemEmptyBottle> ],
           [ <ore:itemEmptyBottle>, <ore:itemEmptyBottle> ] ]);
+
+// Sandwich Press
+recipes.addShaped("immc/sandwich_press", <vanillafoodpantry:sandwich_press_plate>,
+        [ [ null, <ore:plateSteel>, <ore:plateSteel> ],
+          [ <immersiveengineering:material:9> , null, null ],
+          [ null, <ore:plateSteel>, <ore:plateSteel> ] ]);

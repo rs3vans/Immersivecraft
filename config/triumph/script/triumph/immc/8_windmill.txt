@@ -1,0 +1,11 @@
+setIcon(<immersiveengineering:wooden_device1:1>)
+setTitle("Wind Power!")
+setDescription("Harness the power of the wind by crafting and placing a windmill...")
+
+hiddenUnless("triumph:immc/5_eng_hammer")
+
+setRequiresParents()
+addParent("triumph:immc/7_treated_wood")
+
+criteria1 = addCriteria("Place a windmill", "minecraft:placed_block")
+criteria1.setBlock(<immersiveengineering:wooden_device1:1>)

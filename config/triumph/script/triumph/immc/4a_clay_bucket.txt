@@ -2,10 +2,10 @@ setIcon("ceramics:clay_bucket")
 setTitle("A Bucket Made of Clay")
 setDescription("No iron to make a bucket? Don't worry! Just form some clay into a bucket-like-shape and fire it in a furnace for a cheap (albeit less durable) alternative.")
 
-hiddenUnless("triumph:immc_start/3_flint_pick")
+hiddenUnless("triumph:immc/3_flint_pick")
 
 setRequiresParents()
-addParent("triumph:immc_start/3_flint_pick")
+addParent("triumph:immc/3_flint_pick")
 
 criteria1 = addCriteria("Make a clay bucket", "minecraft:inventory_changed")
 criteria1.addItem("ceramics:clay_bucket")

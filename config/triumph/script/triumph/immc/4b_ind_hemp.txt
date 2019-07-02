@@ -2,10 +2,10 @@ setIcon("immersiveengineering:seed")
 setTitle("For Industrial Purposes")
 setDescription("Industrial Hemp is a plant which you will find many uses for. Its fibers can be woven into string and used to make cloth. Plant some and collect some fibers...")
 
-hiddenUnless("triumph:immc_start/1_punch")
+hiddenUnless("triumph:immc/1_punch")
 
 setRequiresParents()
-addParent("triumph:immc_start/3_flint_shovel")
+addParent("triumph:immc/3_flint_shovel")
 
 criteria1 = addCriteria("Plant some hemp", "minecraft:inventory_changed")
 criteria1.addItem("immersiveengineering:material", 4)

@@ -1,12 +1,12 @@
 setIcon("minecraft:dirt")
-setTitle("Flint meet Dirt")
+setTitle("Flint, Meet Dirt")
 setDescription("Digging by hand can take forever. You'll want to craft a flint shovel...")
 
-hiddenUnless("triumph:immc_start/1_punch")
+hiddenUnless("triumph:immc/1_punch")
 
 setRequiresParents()
-addParent("triumph:immc_start/2_sticks_and_stones_1")
-addParent("triumph:immc_start/2_sticks_and_stones_2")
+addParent("triumph:immc/2_sticks_and_stones_1")
+addParent("triumph:immc/2_sticks_and_stones_2")
 
 criteria1 = addCriteria("Acquire a flint shovel", "minecraft:inventory_changed")
 criteria1.addItem(<tconstruct:shovel, nbt:{Stats:{AttackSpeedMultiplier:1.0f,MiningSpeed:2.0f,FreeModifiers:0,Durability:132,HarvestLevel:1,Attack:1.0f},TinkerData:{Materials:["wood","flint","wood"],Modifiers:[]}}>)

@@ -1,0 +1,11 @@
+setIcon(<refinedstorage:grid:1>)
+setTitle("User Interface 2.0")
+setDescription("A Crafting Grid provides the ability to craft with items in your storage network.")
+
+hiddenUnless("triumph:immc/8_storage_control")
+
+setRequiresParents()
+addParent("triumph:immc/9_storage_grid")
+
+criteria1 = addCriteria("Craft a crafting grid", "minecraft:inventory_changed")
+criteria1.addItem(<refinedstorage:grid:1>)

@@ -2,10 +2,10 @@ setIcon("minecraft:stick")
 setTitle("Sticks ...")
 setDescription("Punching trees not working? There's a tool for that! Look on the ground for some sticks you could use to make some tools...")
 
-hiddenUnless("triumph:immc_start/1_punch")
+hiddenUnless("triumph:immc/1_punch")
 
 setRequiresParents()
-addParent("triumph:immc_start/1_punch")
+addParent("triumph:immc/1_punch")
 
 criteria1 = addCriteria("Acquire some sticks", "minecraft:inventory_changed")
 criteria1.addItem("minecraft:stick")

@@ -34,6 +34,7 @@ JEI.removeAndHide(<vanillafoodpantry:natron_ore>);
 JEI.removeAndHide(<vanillafoodpantry:trona_ore>);
 
 // Remove others
+recipes.remove(<vanillafoodpantry:sandwich_press_plate>);
 JEI.removeAndHide(<vanillafoodpantry:flint_butcher_axe>);
 JEI.removeAndHide(<vanillafoodpantry:llama_fleece_block>);
 JEI.removeAndHide(<vanillafoodpantry:flour_pantry_block>);
@@ -56,5 +57,12 @@ recipes.removeByRecipeName("vanillafoodpantry:flour_portion");
 recipes.removeByRecipeName("vanillafoodpantry:bonemeal_from_small_bones");
 recipes.removeByRecipeName("vanillafoodpantry:bonemeal_from_fleshmeal_and_smallbones");
 recipes.removeByRecipeName("vanillafoodpantry:rock_salt_ingot_unpack");
+recipes.removeByRecipeName("vanillafoodpantry:natron_ingot_unpack");
 recipes.removeByRecipeName("vanillafoodpantry:salt_from_crystals");
 recipes.removeByRecipeName("vanillafoodpantry:baking_soda");
+recipes.removeByRecipeName("vanillafoodpantry:dough_pantry_block_unpack");
+recipes.removeByRecipeName("vanillafoodpantry:gelatin_pantry_block_unpack");
+recipes.removeByRecipeName("vanillafoodpantry:hardened_sugar_pantry_block_unpack");
+recipes.removeByRecipeName("vanillafoodpantry:fizzing_agent_pantry_block_unpack");
+recipes.removeByRecipeName("vanillafoodpantry:baking_soda_pantry_block_unpack");
+recipes.removeByRecipeName("vanillafoodpantry:cheese_pantry_block_unpack");

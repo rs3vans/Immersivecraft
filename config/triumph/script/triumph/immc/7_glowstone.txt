@@ -1,0 +1,11 @@
+setIcon(<minecraft:glowstone_dust>)
+setTitle("A Glowing Recommendation")
+setDescription("Glowstone dust can be created by alloying redstone dust together with electrum grit - a combination of gold and silver.")
+
+hiddenUnless("triumph:immc/5_eng_hammer")
+
+setRequiresParents()
+addParent("triumph:immc/6_alloy_kiln")
+
+criteria1 = addCriteria("Acquire some glowstone dust", "minecraft:inventory_changed")
+criteria1.addItem(<minecraft:glowstone_dust>)

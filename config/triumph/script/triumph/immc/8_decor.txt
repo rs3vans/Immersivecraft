@@ -1,0 +1,40 @@
+setIcon(<engineersdecor:treated_wood_table>)
+setTitle("Walk Like an Engineer")
+setDescription("It's not enough to just BE an engineer - you have to look the part as well. Craft some decorative items to spruce up your house, factory, or base...")
+
+hiddenUnless("triumph:immc/5_eng_hammer")
+
+setRequiresParents()
+addParent("triumph:immc/7_treated_wood")
+
+setRequirements("any")
+
+criteria1 = addCriteria("Place down a treated wood table", "minecraft:placed_block")
+criteria1.setBlock(<engineersdecor:treated_wood_table>)
+
+criteria2 = addCriteria("Place down a treated wood stool", "minecraft:placed_block")
+criteria2.setBlock(<engineersdecor:treated_wood_stool>)
+
+criteria3 = addCriteria("Place down a treated wood window", "minecraft:placed_block")
+criteria3.setBlock(<engineersdecor:treated_wood_window>)
+
+criteria4 = addCriteria("Place down a treated wood door", "minecraft:placed_block")
+criteria4.setBlock(<engineersdoors:door_treated>)
+
+criteria5 = addCriteria("Place down an ornate treated wood door", "minecraft:placed_block")
+criteria5.setBlock(<engineersdoors:door_treated_ornate>)
+
+criteria6 = addCriteria("Place down a reinforced treated wood door", "minecraft:placed_block")
+criteria6.setBlock(<engineersdoors:door_treated_reinforced>)
+
+criteria7 = addCriteria("Place down a treated wood windowsill", "minecraft:placed_block")
+criteria7.setBlock(<engineersdecor:treated_wood_windowsill>)
+
+criteria8 = addCriteria("Place down a treated wood pole", "minecraft:placed_block")
+criteria8.setBlock(<engineersdecor:treated_wood_pole>)
+
+criteria9 = addCriteria("Place down a treated wood pole support", "minecraft:placed_block")
+criteria9.setBlock(<engineersdecor:treated_wood_pole_support>)
+
+criteria10 = addCriteria("Place down a treated wood pole_head", "minecraft:placed_block")
+criteria10.setBlock(<engineersdecor:treated_wood_pole_head>)

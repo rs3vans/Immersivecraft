@@ -1,0 +1,11 @@
+setIcon(<refinedstorage:external_storage>)
+setTitle("Input/Output")
+setDescription("Items can be added/removed from physical storage containers, through a grid, using an external storage conduit.")
+
+hiddenUnless("triumph:immc/8_storage_control")
+
+setRequiresParents()
+addParent("triumph:immc/8_storage_control")
+
+criteria1 = addCriteria("Craft an external storage conduit", "minecraft:inventory_changed")
+criteria1.addItem(<refinedstorage:external_storage>)

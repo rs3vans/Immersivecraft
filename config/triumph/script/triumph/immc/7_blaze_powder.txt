@@ -1,0 +1,11 @@
+setIcon(<minecraft:blaze_powder>)
+setTitle("A-Blaze-ing!")
+setDescription("Alloying glowstone dust and some gunpowder together will net you some blaze powder - a very useful substance!")
+
+hiddenUnless("triumph:immc/5_eng_hammer")
+
+setRequiresParents()
+addParent("triumph:immc/6_alloy_kiln")
+
+criteria1 = addCriteria("Acquire some blaze powder", "minecraft:inventory_changed")
+criteria1.addItem(<minecraft:blaze_powder>)

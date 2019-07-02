@@ -1,0 +1,11 @@
+setIcon(<refinedstorage:grid>)
+setTitle("User Interface")
+setDescription("In order to view, add, and remove items from storages attached to your network, you'll need to craft and connect a grid.")
+
+hiddenUnless("triumph:immc/8_storage_control")
+
+setRequiresParents()
+addParent("triumph:immc/8_storage_control")
+
+criteria1 = addCriteria("Craft a storage grid", "minecraft:inventory_changed")
+criteria1.addItem(<refinedstorage:grid>)

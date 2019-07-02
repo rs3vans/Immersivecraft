@@ -1,0 +1,11 @@
+setIcon(<immersiveengineering:tool:1>)
+setTitle("A Cut Above the Rest")
+setDescription("How many wires could wirecutters cut if wirecutters could cut wires?")
+
+hiddenUnless("triumph:immc/8_workbench")
+
+setRequiresParents()
+addParent("triumph:immc/8_workbench")
+
+criteria1 = addCriteria("Craft a pair of wirecutters", "minecraft:inventory_changed")
+criteria1.addItem(<immersiveengineering:tool:1>)

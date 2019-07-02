@@ -1,0 +1,11 @@
+setIcon(<refinedstorage:grid:3>)
+setTitle("User Interface 2.1")
+setDescription("A Fluid Grid provides the ability to store fluids within your storage network.")
+
+hiddenUnless("triumph:immc/8_storage_control")
+
+setRequiresParents()
+addParent("triumph:immc/9_storage_grid")
+
+criteria1 = addCriteria("Craft a fluid grid", "minecraft:inventory_changed")
+criteria1.addItem(<refinedstorage:grid:3>)

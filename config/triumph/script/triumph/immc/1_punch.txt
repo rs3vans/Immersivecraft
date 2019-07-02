@@ -3,7 +3,7 @@ setTitle("Woodchuck Norris?")
 setDescription("It seems you have an uncontrollable urge to punch a tree... but will it do any good?")
 setFrameType("GOAL")
 
-addParent("triumph:immc_start/0_root")
+addParent("triumph:immc/0_root")
 
 setRequirements("any")
 

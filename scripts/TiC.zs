@@ -418,10 +418,10 @@ JEI.addItem(ironBootsCore);
 JEI.addItem(steelBootsCore);
 JEI.addItem(obsidianBootsCore);
 
-val leatherChest    = <conarm:chestplate>.withTag({Stats: {Toughness: 0.0 as float, FreeModifiers: 0, Durability: 32,  Defense: 3.0 as float}, TinkerData: {Materials: ["leather", "leather", "leather"], Modifiers: []}});
-val leatherHelmet   = <conarm:helmet>.withTag({Stats:     {Toughness: 0.0 as float, FreeModifiers: 0, Durability: 32,  Defense: 2.0 as float}, TinkerData: {Materials: ["leather", "leather", "leather"], Modifiers: []}});
-val leatherLeggings = <conarm:leggings>.withTag({Stats:   {Toughness: 0.0 as float, FreeModifiers: 0, Durability: 32,  Defense: 3.0 as float}, TinkerData: {Materials: ["leather", "leather", "leather"], Modifiers: []}});
-val leatherBoots    = <conarm:boots>.withTag({Stats:      {Toughness: 0.0 as float, FreeModifiers: 0, Durability: 32,  Defense: 1.0 as float}, TinkerData: {Materials: ["leather", "leather", "leather"], Modifiers: []}});
+val leatherChest    = <conarm:chestplate>.withTag({Stats: {Toughness: 0.0 as float, FreeModifiers: 0, Durability: 32,  Defense: 5.0 as float}, TinkerData: {Materials: ["leather", "leather", "leather"], Modifiers: []}});
+val leatherHelmet   = <conarm:helmet>.withTag({Stats:     {Toughness: 0.0 as float, FreeModifiers: 0, Durability: 32,  Defense: 4.0 as float}, TinkerData: {Materials: ["leather", "leather", "leather"], Modifiers: []}});
+val leatherLeggings = <conarm:leggings>.withTag({Stats:   {Toughness: 0.0 as float, FreeModifiers: 0, Durability: 32,  Defense: 4.0 as float}, TinkerData: {Materials: ["leather", "leather", "leather"], Modifiers: []}});
+val leatherBoots    = <conarm:boots>.withTag({Stats:      {Toughness: 0.0 as float, FreeModifiers: 0, Durability: 32,  Defense: 3.0 as float}, TinkerData: {Materials: ["leather", "leather", "leather"], Modifiers: []}});
 JEI.addItem(leatherChest);
 JEI.addItem(leatherHelmet);
 JEI.addItem(leatherLeggings);

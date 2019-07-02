@@ -1,0 +1,11 @@
+setIcon(<immersiveengineering:treated_wood>)
+setTitle("What a Treat!")
+setDescription("Creosote oil is used to treat wood, which can be used to make many things...")
+
+hiddenUnless("triumph:immc/5_eng_hammer")
+
+setRequiresParents()
+addParent("triumph:immc/6_coke_oven")
+
+criteria1 = addCriteria("Acquire some treated wood", "minecraft:inventory_changed")
+criteria1.addItem(<immersiveengineering:treated_wood>)

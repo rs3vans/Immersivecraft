@@ -1,0 +1,14 @@
+setIcon(<tconstruct:smeltery_controller>)
+setTitle("Smelt-taculous!")
+setDescription("The melter is small, slow and can't alloy liquids together. Build a real smeltery, and place down the smeltery controller...")
+setFrameType("GOAL")
+
+hiddenUnless("triumph:immc/3_flint_pick")
+
+setRequiresParents()
+addParent("triumph:immc/4a_seared_brick")
+
+criteria1 = addCriteria("Place a smeltery controller", "minecraft:placed_block")
+criteria1.setBlock(<tconstruct:smeltery_controller>)
+
+setRewardExperience(15)

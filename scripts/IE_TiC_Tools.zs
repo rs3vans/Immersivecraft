@@ -124,6 +124,11 @@ JEI.addItem(obsidianBoots);
 val leather = <improvedbackpacks:tanned_leather>;
 val stoneToolMaterial = <ore:cobblestone>;
 val blazePowder = <minecraft:blaze_powder>;
+val grip = <immersiveengineering:material:13>;
+val steelComponent = <immersiveengineering:material:8>;
+val steelRodOre = <ore:stickSteel>;
+val woolOre = <ore:wool>;
+val heavyEngBlock = <immersiveengineering:metal_decoration0:5>;
 
 // Engineer's Hammer
 val engineerHammer = <immersiveengineering:tool>;
@@ -145,9 +150,34 @@ Casting.addBasinRecipe(treatedWoodPlankOre.firstItem, plankOre, <liquid:creosote
 val engineerCutters = <immersiveengineering:tool:1>;
 recipes.removeShaped(engineerCutters);
 
+// Skyhook
+val skyhook = <immersiveengineering:skyhook>;
+recipes.removeShaped(skyhook);
+
+// Ear Defenders
+val earmuffs = <immersiveengineering:earmuffs>;
+recipes.removeShaped(earmuffs);
+
+// Mining Drill
+val drill = <immersiveengineering:drill>;
+recipes.removeShaped(drill);
+
+// Chem Thrower
+val chemthrower = <immersiveengineering:chemthrower>;
+recipes.removeShaped(chemthrower);
+
+// Rail Gun
+val railgun = <immersiveengineering:railgun>;
+recipes.removeShaped(railgun);
+
 // Blueprints
 
 Blueprint.addRecipe("Engineer's Tools", engineerCutters, [ treatedWoodRod * 2, ironIngotOre * 2 ]);
+Blueprint.addRecipe("Engineer's Tools", skyhook, [ grip * 2, steelComponent, steelIngotOre * 3 ]);
+Blueprint.addRecipe("Engineer's Tools", earmuffs, [ woolOre * 2, steelRodOre * 3 ]);
+Blueprint.addRecipe("Engineer's Tools", drill, [ grip * 2, steelComponent * 2, heavyEngBlock ]);
+Blueprint.addRecipe("Engineer's Tools", chemthrower, [ grip * 2, steelComponent * 2, heavyEngBlock ]);
+Blueprint.addRecipe("Engineer's Tools", railgun, [ grip * 2, steelComponent * 2, heavyEngBlock ]);
 
 Blueprint.addRecipe("Basic Tool Parts", treatedWoodRod, [ treatedWoodStickOre * 2 ]);
 Blueprint.addRecipe("Basic Tool Parts", woodBinding, [ treatedWoodStickOre * 2 ]);

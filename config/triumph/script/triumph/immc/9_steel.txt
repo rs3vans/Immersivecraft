@@ -1,0 +1,11 @@
+setIcon(<immersiveengineering:metal:8>)
+setTitle("Strong Stuff")
+setDescription("Steel is an alloy of iron and carbon and is made in the Blast Furnace...")
+
+hiddenUnless("triumph:immc/8_blast_furnace")
+
+setRequiresParents()
+addParent("triumph:immc/8_blast_furnace")
+
+criteria1 = addCriteria("Make a steel ingot", "minecraft:inventory_changed")
+criteria1.addItem(<immersiveengineering:metal:8>)

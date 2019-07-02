@@ -1,0 +1,11 @@
+setIcon(<immersiveengineering:stone_decoration>)
+setTitle("Cooking Coal")
+setDescription("A coke oven is essential for making both coal coke and creosote oil. Use your hammer to form one from 27 code brick blocks.")
+
+hiddenUnless("triumph:immc/5_eng_hammer")
+
+setRequiresParents()
+addParent("triumph:immc/5_eng_hammer")
+
+criteria1 = addCriteria("Make a Coke Oven", "immersiveengineering:multiblock_formed")
+criteria1.setMultiblock("IE:CokeOven")

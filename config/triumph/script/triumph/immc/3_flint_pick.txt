@@ -1,13 +1,13 @@
 setIcon("minecraft:cobblestone")
-setTitle("Flint meet Stone")
+setTitle("Flint, Meet Stone")
 setDescription("Making a flint pickaxe will be vital in your ability to survive...")
 setFrameType("GOAL")
 
-hiddenUnless("triumph:immc_start/1_punch")
+hiddenUnless("triumph:immc/1_punch")
 
 setRequiresParents()
-addParent("triumph:immc_start/2_sticks_and_stones_1")
-addParent("triumph:immc_start/2_sticks_and_stones_2")
+addParent("triumph:immc/2_sticks_and_stones_1")
+addParent("triumph:immc/2_sticks_and_stones_2")
 
 criteria1 = addCriteria("Acquire a flint pickaxe", "minecraft:inventory_changed")
 criteria1.addItem(<tconstruct:pickaxe, nbt:{Stats:{AttackSpeedMultiplier:1.0f,MiningSpeed:2.0f,FreeModifiers:0,Durability:132,HarvestLevel:1,Attack:2.0f},TinkerData:{Materials:["wood","flint","wood"],Modifiers:[]}}>)

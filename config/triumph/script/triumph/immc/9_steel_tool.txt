@@ -1,0 +1,22 @@
+setIcon(<tconstruct:pickaxe, nbt:{TinkerData:{Materials:["treatedwood","steel","iron"]}}>)
+setTitle("It's a Steel")
+setDescription("Even more efficient and durable than iron tools, steel tools can be crafted using the right blueprint with the engineer's workbench.")
+
+hiddenUnless("triumph:immc/8_workbench")
+
+setRequiresParents()
+addParent("triumph:immc/9_iron_tool")
+
+setRequirements("any")
+
+criteria1 = addCriteria("Craft a steel pickaxe", "minecraft:inventory_changed")
+criteria1.addItem(<tconstruct:pickaxe, nbt:{Stats:{AttackSpeedMultiplier:2.0f,MiningSpeed:10.0f,FreeModifiers:0,Durability:815,HarvestLevel:3,Attack:4.0f},TinkerData:{Materials:["treatedwood","steel","iron"],Modifiers:[]}}>)
+
+criteria2 = addCriteria("Craft a steel hatchet", "minecraft:inventory_changed")
+criteria2.addItem(<tconstruct:hatchet, nbt:{Stats:{AttackSpeedMultiplier:2.0f,MiningSpeed:10.0f,FreeModifiers:0,Durability:815,HarvestLevel:3,Attack:12.0f},TinkerData:{Materials:["treatedwood","steel","iron"],Modifiers:[]}}>)
+
+criteria3 = addCriteria("Craft a steel shovel", "minecraft:inventory_changed")
+criteria3.addItem(<tconstruct:shovel, nbt:{Stats:{AttackSpeedMultiplier:2.0f,MiningSpeed:10.0f,FreeModifiers:0,Durability:815,HarvestLevel:3,Attack:2.0f},TinkerData:{Materials:["treatedwood","steel","iron"],Modifiers:[]}}>)
+
+criteria4 = addCriteria("Craft a steel sword", "minecraft:inventory_changed")
+criteria4.addItem(<tconstruct:broadsword, nbt:{Stats:{AttackSpeedMultiplier:3.0f,MiningSpeed:10.0f,FreeModifiers:0,Durability:815,HarvestLevel:3,Attack:11.0f},TinkerData:{Materials:["treatedwood","steel","iron"],Modifiers:[]}}>)

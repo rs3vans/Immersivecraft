@@ -1,0 +1,11 @@
+setIcon(<refinedstorage:quartz_enriched_iron>)
+setTitle("Of Quartz it's Not Just Iron")
+setDescription("Iron enriched with quartz has special properties that make it useful for creating computerized storage components.")
+
+hiddenUnless("triumph:immc/5_eng_hammer")
+
+setRequiresParents()
+addParent("triumph:immc/6_alloy_kiln")
+
+criteria1 = addCriteria("Acquire some quartz enriched iron", "minecraft:inventory_changed")
+criteria1.addItem(<refinedstorage:quartz_enriched_iron>)

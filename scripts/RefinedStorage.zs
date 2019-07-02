@@ -1,3 +1,7 @@
+#modloaded refinedstorage
+#modloaded immersiveengineering
+#modloaded immersivecables
+
 import mods.jei.JEI;
 import mods.immersiveengineering.AlloySmelter;
 import mods.immersiveengineering.ArcFurnace;
@@ -107,7 +111,7 @@ val quartzCoilBlock = <immersivecables:coil_block:3>;
 
 // Quartz-enriched iron
 val quartz = <ore:gemQuartz>;
-val iron = <ore:ingotIron>;
+val iron = <ore:dustIron>;
 val quartzIron = <refinedstorage:quartz_enriched_iron>;
 val quartzIronBlk = <refinedstorage:quartz_enriched_iron_block>;
 AlloySmelter.addRecipe(quartzIron, iron, quartz, 200);
@@ -144,7 +148,7 @@ recipes.addShaped(grid,
 
 // Storage monitor
 val storageMonitor = <refinedstorage:storage_monitor>;
-val barrel = <immersiveengineering:wooden_device0:1>;
+val barrel = <immersiveengineering:wooden_device0:0>;
 recipes.addShaped(storageMonitor,
         [[barrel,     redstoneEngBlk, glassPane],
          [quartzIron, machineCasing,  glassPane],

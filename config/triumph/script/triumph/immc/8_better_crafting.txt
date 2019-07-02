@@ -1,0 +1,11 @@
+setIcon(<engineersdecor:treated_wood_crafting_table>)
+setTitle("Better Crafting")
+setDescription("Crafting table too plain? Make a treated wood crafting table to enhance your experience!")
+
+hiddenUnless("triumph:immc/5_eng_hammer")
+
+setRequiresParents()
+addParent("triumph:immc/7_treated_wood")
+
+criteria1 = addCriteria("Craft a treated wood crafting table", "minecraft:inventory_changed")
+criteria1.addItem(<engineersdecor:treated_wood_crafting_table>)

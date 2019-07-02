@@ -1,0 +1,11 @@
+setIcon("improvedbackpacks:backpack")
+setTitle("A Pack On Your Back")
+setDescription("It's like a chest, but PORTABLE and UPGRADEABLE.")
+
+hiddenUnless("triumph:immc/1_punch")
+
+setRequiresParents()
+addParent("triumph:immc/3_flint_hatchet")
+
+criteria1 = addCriteria("Craft a backpack", "minecraft:inventory_changed")
+criteria1.addItem("improvedbackpacks:backpack")

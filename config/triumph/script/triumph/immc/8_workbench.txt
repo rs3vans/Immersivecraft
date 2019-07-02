@@ -1,0 +1,14 @@
+setIcon(<immersiveengineering:wooden_device0:2>)
+setTitle("Work, Work, Work!")
+setDescription("Not everything can be crafted freehand. An engineer's workbench, combined with various blueprints, will allow you to make a number of useful tools and parts...")
+setFrameType("GOAL")
+
+hiddenUnless("triumph:immc/5_eng_hammer")
+
+setRequiresParents()
+addParent("triumph:immc/7_treated_wood")
+
+criteria1 = addCriteria("Place an engineer's workbench", "minecraft:placed_block")
+criteria1.setBlock(<immersiveengineering:wooden_device0:2>)
+
+setRewardExperience(10)

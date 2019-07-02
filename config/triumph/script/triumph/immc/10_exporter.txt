@@ -1,0 +1,11 @@
+setIcon(<refinedstorage:exporter>)
+setTitle("Input 2.0")
+setDescription("An exporter will allow taking items out of your storage network.")
+
+hiddenUnless("triumph:immc/8_storage_control")
+
+setRequiresParents()
+addParent("triumph:immc/9_storage_grid")
+
+criteria1 = addCriteria("Craft an exporter", "minecraft:inventory_changed")
+criteria1.addItem(<refinedstorage:exporter>)

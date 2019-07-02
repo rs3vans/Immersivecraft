@@ -2,10 +2,10 @@ setIcon(<vanillafoodpantry:rock_salt_crystals>)
 setTitle("CRYSTAL CAVES")
 setDescription("Salt and Natron crystal deposits can be found naturally in caves. Collect the crystals from them and grind them to make salt and baking powder (two important food ingredients).")
 
-hiddenUnless("triumph:immc_start/3_flint_pick")
+hiddenUnless("triumph:immc/3_flint_pick")
 
 setRequiresParents()
-addParent("triumph:immc_start/4a_hand_grindstone")
+addParent("triumph:immc/4a_hand_grindstone")
 
 setRequirements("any")
 

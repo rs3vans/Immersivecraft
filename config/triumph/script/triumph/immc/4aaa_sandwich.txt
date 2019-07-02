@@ -1,0 +1,14 @@
+setIcon(<vanillafoodpantry:decker>)
+setTitle("Im-PRESS-ive Sandwiches!")
+setDescription("With bread, protein, veggies, and condiments you'll never run out of options! Make a decker sandwich using a press and some ingredients for a meal that lasts...")
+setFrameType("CHALLENGE")
+
+hiddenUnless("triumph:immc/3_flint_pick")
+
+setRequiresParents()
+addParent("triumph:immc/4aa_dough")
+
+criteria1 = addCriteria("Make a decker sandwich", "minecraft:inventory_changed")
+criteria1.addItem(<vanillafoodpantry:decker>)
+
+setRewardExperience(30)

@@ -1,0 +1,11 @@
+setIcon(<minecraft:bucket>)
+setTitle("A Real Bucket")
+setDescription("A clay bucket works in a pinch, but can't handle hot liquids without breaking. Cast an iron bucket for a more durable solution to your lava-toting needs!")
+
+hiddenUnless("triumph:immc/3_flint_pick")
+
+setRequiresParents()
+addParent("triumph:immc/4a_seared_brick")
+
+criteria1 = addCriteria("Acquire the Engineer's Hammer", "minecraft:inventory_changed")
+criteria1.addItem(<minecraft:bucket>)

@@ -1,0 +1,11 @@
+setIcon(<immersiveengineering:stone_decoration:2>)
+setTitle("Faster Blaster")
+setDescription("Blast furnace too slow? Try making an Improved Blast Furnace from reinforced blast brick. Attaching preheaters to the sides of this multiblock will make it operate twice as fast as the regular Blast Furnace!")
+
+hiddenUnless("triumph:immc/8_blast_furnace")
+
+setRequiresParents()
+addParent("triumph:immc/8_blast_furnace")
+
+criteria1 = addCriteria("Make a Coke Oven", "immersiveengineering:multiblock_formed")
+criteria1.setMultiblock("IT:BlastFurnaceAdvanced")

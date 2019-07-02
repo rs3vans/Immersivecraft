@@ -1,11 +1,11 @@
 setIcon("adchimneys:brick")
-setTitle("Fresh air!")
+setTitle("Fresh Air!")
 setDescription("Tired of all that smoke from your funaces filling up your house, hidey-hole, or dirt hut? Look no further! Craft some brick or cobblestone chimneys and place them on any source of smoke to direct the stuff up and outside!")
 
-hiddenUnless("triumph:immc_start/3_flint_pick")
+hiddenUnless("triumph:immc/3_flint_pick")
 
 setRequiresParents()
-addParent("triumph:immc_start/3_flint_pick")
+addParent("triumph:immc/3_flint_pick")
 
 setRequirements("any")
 

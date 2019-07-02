@@ -1,0 +1,22 @@
+setIcon(<tconstruct:pickaxe, nbt:{TinkerData:{Materials:["treatedwood","iron","iron"]}}>)
+setTitle("It's Iron-ic")
+setDescription("Let's be honest... Flint tools suck. An iron tool will be more efficient and last longer. Craft an iron pickaxe, hatchet, shovel, or sword.")
+
+hiddenUnless("triumph:immc/8_workbench")
+
+setRequiresParents()
+addParent("triumph:immc/8_workbench")
+
+setRequirements("any")
+
+criteria1 = addCriteria("Craft an iron pickaxe", "minecraft:inventory_changed")
+criteria1.addItem(<tconstruct:pickaxe, nbt:{Stats:{AttackSpeedMultiplier:1.0f,MiningSpeed:6.0f,FreeModifiers:0,Durability:279,HarvestLevel:2,Attack:3.0f},TinkerData:{Materials:["treatedwood","iron","iron"],Modifiers:[]}}>)
+
+criteria2 = addCriteria("Craft an iron hatchet", "minecraft:inventory_changed")
+criteria2.addItem(<tconstruct:hatchet, nbt:{Stats:{AttackSpeedMultiplier:1.0f,MiningSpeed:6.0f,FreeModifiers:0,Durability:279,HarvestLevel:2,Attack:9.0f},TinkerData:{Materials:["treatedwood","iron","iron"],Modifiers:[]}}>)
+
+criteria3 = addCriteria("Craft an iron shovel", "minecraft:inventory_changed")
+criteria3.addItem(<tconstruct:shovel, nbt:{Stats:{AttackSpeedMultiplier:1.0f,MiningSpeed:6.0f,FreeModifiers:0,Durability:279,HarvestLevel:2,Attack:1.0f},TinkerData:{Materials:["treatedwood","iron","iron"],Modifiers:[]}}>)
+
+criteria4 = addCriteria("Craft an iron sword", "minecraft:inventory_changed")
+criteria4.addItem(<tconstruct:broadsword, nbt:{Stats:{AttackSpeedMultiplier:1.0f,MiningSpeed:6.0f,FreeModifiers:0,Durability:279,HarvestLevel:2,Attack:8.0f},TinkerData:{Materials:["treatedwood","iron","iron"],Modifiers:[]}}>)

@@ -1,0 +1,11 @@
+setIcon(<immersiveengineering:stone_decoration:10>)
+setTitle("Alloy My Metals")
+setDescription("An alloy kiln can alloy two things together to make something new. Use your hammer to form one from 8 alloy kiln blocks.")
+
+hiddenUnless("triumph:immc/5_eng_hammer")
+
+setRequiresParents()
+addParent("triumph:immc/5_eng_hammer")
+
+criteria1 = addCriteria("Make a Coke Oven", "immersiveengineering:multiblock_formed")
+criteria1.setMultiblock("IE:AlloySmelter")

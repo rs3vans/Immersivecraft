@@ -1,0 +1,25 @@
+setIcon(<conarm:chestplate, nbt:{TinkerData:{Materials:["obsidianenderalloy","obsidianenderalloy","leather"]}}>)
+setTitle("Captain Obsidian?")
+setDescription("A suit of obsidian ender alloy. Guaranteed to make you feel invincible! (Disclaimer: does not actually make you invincible.)")
+setFrameType("CHALLENGE")
+
+hiddenUnless("triumph:immc/8_workbench")
+
+setRequiresParents()
+addParent("triumph:immc/9_steel_armor")
+
+setRequirements("any")
+
+criteria1 = addCriteria("Craft a steel chestplate", "minecraft:inventory_changed")
+criteria1.addItem(<conarm:chestplate, nbt:{Stats:{Toughness:7.0f,FreeModifiers:0,Durability:1027,Defense:32.7f},TinkerData:{Materials:["obsidianenderalloy","obsidianenderalloy","leather"],Modifiers:[]}}>)
+
+criteria2 = addCriteria("Craft a steel helmet", "minecraft:inventory_changed")
+criteria2.addItem(<conarm:helmet, nbt:{Stats:{Toughness:6.0f,FreeModifiers:0,Durability:1027,Defense:22.7f},TinkerData:{Materials:["obsidianenderalloy","obsidianenderalloy","leather"],Modifiers:[]}}>)
+
+criteria3 = addCriteria("Craft a pair of steel leggings", "minecraft:inventory_changed")
+criteria3.addItem(<conarm:leggings, nbt:{Stats:{Toughness:7.0f,FreeModifiers:0,Durability:1027,Defense:31.7f},TinkerData:{Materials:["obsidianenderalloy","obsidianenderalloy","leather"],Modifiers:[]}}>)
+
+criteria4 = addCriteria("Craft a pair of steel boots", "minecraft:inventory_changed")
+criteria4.addItem(<conarm:boots, nbt:{Stats:{Toughness:2.0f,FreeModifiers:0,Durability:1027,Defense:14.7f},TinkerData:{Materials:["obsidianenderalloy","obsidianenderalloy","leather"],Modifiers:[]}}>)
+
+setRewardExperience(45)

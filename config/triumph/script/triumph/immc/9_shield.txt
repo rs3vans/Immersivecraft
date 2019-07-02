@@ -1,0 +1,11 @@
+setIcon(<immersiveengineering:shield>)
+setTitle("Man of Steel")
+setDescription("A regular shield is good, but a steel-plated one is better. Craft one using your engineer's workbench...")
+
+hiddenUnless("triumph:immc/8_workbench")
+
+setRequiresParents()
+addParent("triumph:immc/8_workbench")
+
+criteria1 = addCriteria("Craft a heavy-plated shield", "minecraft:inventory_changed")
+criteria1.addItem(<immersiveengineering:shield>)

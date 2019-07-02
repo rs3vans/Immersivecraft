@@ -1,7 +1,7 @@
 setIcon("minecraft:grass")
-setTitle("Getting Started")
-setDescription("A crude awakening...")
-setBackground("minecraft:textures/blocks/gravel.png")
+setTitle("ImmersiveCraft")
+setDescription("A Crude Awakening...")
+setBackground("immersiveengineering:textures/blocks/treated_wood_packaged.png")
 setShowToast(false)
 setAnnounceToChat(false)
 
