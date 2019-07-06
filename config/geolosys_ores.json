@@ -2,7 +2,7 @@
   "coal": {
     "minY": 10,
     "maxY": 78,
-    "chance": 8,
+    "chance": 20,
     "size": 64,
     "blacklist": [
       -1,
@@ -12,7 +12,7 @@
   "cinnabar": {
     "minY": 10,
     "maxY": 32,
-    "chance": 6,
+    "chance": 15,
     "size": 40,
     "blacklist": [
       -1,
@@ -22,7 +22,7 @@
   "gold": {
     "minY": 10,
     "maxY": 32,
-    "chance": 5,
+    "chance": 16,
     "size": 40,
     "blacklist": [
       -1,
@@ -32,7 +32,7 @@
   "lapis": {
     "minY": 10,
     "maxY": 32,
-    "chance": 5,
+    "chance": 16,
     "size": 32,
     "blacklist": [
       -1,
@@ -42,7 +42,7 @@
   "quartz": {
     "minY": 10,
     "maxY": 32,
-    "chance": 6,
+    "chance": 16,
     "size": 40,
     "blacklist": [
       -1,
@@ -52,7 +52,7 @@
   "kimberlite": {
     "minY": 8,
     "maxY": 32,
-    "chance": 4,
+    "chance": 10,
     "size": 20,
     "blacklist": [
       -1,
@@ -62,7 +62,7 @@
   "beryl": {
     "minY": 8,
     "maxY": 32,
-    "chance": 4,
+    "chance": 10,
     "size": 20,
     "blacklist": [
       -1,
@@ -72,7 +72,7 @@
   "hematite": {
     "minY": 32,
     "maxY": 60,
-    "chance": 6,
+    "chance": 22,
     "size": 32,
     "blacklist": [
       -1,
@@ -82,7 +82,7 @@
   "limonite": {
     "minY": 10,
     "maxY": 32,
-    "chance": 5,
+    "chance": 15,
     "size": 64,
     "blacklist": [
       -1,
@@ -92,7 +92,7 @@
   "malachite": {
     "minY": 32,
     "maxY": 44,
-    "chance": 6,
+    "chance": 16,
     "size": 24,
     "blacklist": [
       -1,
@@ -123,7 +123,7 @@
   "galena": {
     "minY": 16,
     "maxY": 50,
-    "chance": 5,
+    "chance": 14,
     "size": 64,
     "blacklist": [
       -1,
@@ -133,7 +133,7 @@
   "bauxite": {
     "minY": 45,
     "maxY": 70,
-    "chance": 5,
+    "chance": 16,
     "size": 64,
     "blacklist": [
       -1,
@@ -150,7 +150,7 @@
   "autunite": {
     "minY": 10,
     "maxY": 32,
-    "chance": 5,
+    "chance": 10,
     "size": 24,
     "blacklist": [
       -1,

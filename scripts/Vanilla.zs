@@ -37,7 +37,6 @@ JEI.removeAndHide(<minecraft:stone_axe>);
 JEI.removeAndHide(<minecraft:stone_pickaxe>);
 JEI.removeAndHide(<minecraft:stone_shovel>);
 JEI.removeAndHide(<minecraft:stone_sword>);
-JEI.removeAndHide(<minecraft:stone_hoe>);
 
 JEI.removeAndHide(<minecraft:golden_axe>);
 JEI.removeAndHide(<minecraft:golden_pickaxe>);
@@ -58,7 +57,7 @@ JEI.removeAndHide(<minecraft:iron_axe>);
 JEI.removeAndHide(<minecraft:iron_pickaxe>);
 JEI.removeAndHide(<minecraft:iron_shovel>);
 JEI.removeAndHide(<minecraft:iron_sword>);
-JEI.removeAndHide(<minecraft:iron_hoe>);
+recipes.remove(<minecraft:iron_hoe>);
 JEI.removeAndHide(<minecraft:iron_chestplate>);
 JEI.removeAndHide(<minecraft:iron_leggings>);
 JEI.removeAndHide(<minecraft:iron_helmet>);
@@ -79,4 +78,8 @@ JEI.removeAndHide(<minecraft:leather_leggings>);
 JEI.removeAndHide(<minecraft:leather_helmet>);
 JEI.removeAndHide(<minecraft:leather_boots>);
 
+JEI.removeAndHide(<minecraft:bow>);
+
+recipes.remove(<minecraft:stone_hoe>);
 recipes.remove(<minecraft:shield>);
+recipes.remove(<minecraft:shears>);

@@ -26,6 +26,9 @@ val itemsToNotRemove = [
     "item.tconstruct.cast_custom.ingot",
     "item.tconstruct.cast_custom.gem",
     "item.tconstruct.tool_rod",
+    "item.tconstruct.bow_limb",
+    "item.tconstruct.bow_string",
+    "item.tconstruct.shortbow",
     "tile.tconstruct.channel",
     "tile.tconstruct.tinker_tank_controller"
 ] as string[];
@@ -260,6 +263,9 @@ JEI.removeAndHide(<tconstruct:clay_cast>.withTag({PartType: "tconstruct:broad_ax
 JEI.removeAndHide(<tconstruct:clay_cast>.withTag({PartType: "tconstruct:tough_binding"}));
 
 val flintToolMaterial = <ore:itemRawFlint>;
+val stickOre = <ore:stickWood>;
+val stringOre = <ore:string>;
+val hempOre = <ore:fiberHemp>;
 
 // Rods
 val woodRod = <tconstruct:tool_rod>.withTag({Material: "wood"});
@@ -269,7 +275,7 @@ JEI.addItem(treatedWoodRod);
 JEI.addItem(fireWoodRod);
 
 recipes.addShapeless("immc/wood_tool_rod", woodRod,
-        [ <ore:stickWood>, <ore:stickWood> ]);
+        [ stickOre, stickOre ]);
 
 // Binding
 val woodBinding = <tconstruct:binding>.withTag({"Material": "treatedwood"});
@@ -359,6 +365,36 @@ recipes.addShaped("immc/flint_pick", flintPick,
         [ [null,    flintPickHead],
           [woodRod, null         ] ]);
 
+// Bows
+val woodBowLimb = <tconstruct:bow_limb>.withTag({"Material": "wood"});
+val treatedWoodBowLimb = <tconstruct:bow_limb>.withTag({"Material": "treatedwood"});
+val stringBowString = <tconstruct:bow_string>.withTag({"Material": "string"});
+val hempBowString = <tconstruct:bow_string>.withTag({"Material": "hemp"});
+val woodBow = <tconstruct:shortbow>.withTag({Stats: {AttackSpeedMultiplier: 1.0 as float, DrawSpeed: 1.0 as float, FreeModifiers: 0, ProjectileBonusDamage: 0.0 as float, Durability: 35, Attack: 5.0 as float, Range: 2.0 as float}, TinkerData: {Materials: ["wood", "wood", "string"], Modifiers: []}});
+
+JEI.addItem(treatedWoodBowLimb);
+JEI.addItem(hempBowString);
+JEI.addItem(woodBow);
+
+recipes.addShaped("immc/string_bow_string", stringBowString,
+        [ [null, null, stringOre],
+          [null, stringOre, null],
+          [stringOre, null, null] ]);
+recipes.addShaped("immc/hemp_bow_string", hempBowString,
+        [ [null, null, hempOre],
+          [null, hempOre, null],
+          [hempOre, null, null] ]);
+
+recipes.addShaped("immc/wood_bow_limb", woodBowLimb,
+        [ [null, stickOre],
+          [stickOre, null],
+          [stickOre, null] ]);
+
+recipes.addShaped("immc/wood_bow", woodBow,
+        [ [null,        woodBowLimb    ],
+          [woodBowLimb, stringBowString] ]);
+
+// Others
 val stoneHammerHead = <tconstruct:hammer_head>.withTag({"Material": "stone"});
 val ironHammerHead = <tconstruct:hammer_head>.withTag({"Material": "iron"});
 JEI.addItem(stoneHammerHead);
@@ -459,6 +495,23 @@ recipes.addShapeless("immc/leather_leggings", leatherLeggings,
         [ leatherLeggingsCore, leatherArmorPlates, leatherArmorTrim ]);
 recipes.addShapeless("immc/leather_boots", leatherBoots,
         [ leatherBootsCore, leatherArmorPlates, leatherArmorTrim ]);
+
+// Sharpening Kits
+val sharpeningKit = <tconstruct:sharpening_kit>;
+val flintSharpeningKit = sharpeningKit.withTag({Material: "flint"});
+val ironSharpeningKit = sharpeningKit.withTag({Material: "iron"});
+val steelSharpeningKit = sharpeningKit.withTag({Material: "steel"});
+val obsidianSharpeningKit = sharpeningKit.withTag({Material: "obsidianenderalloy"});
+
+JEI.addItem(flintSharpeningKit);
+JEI.addItem(ironSharpeningKit);
+JEI.addItem(steelSharpeningKit);
+JEI.addItem(obsidianSharpeningKit);
+
+recipes.addShaped("immc/flint_sharpening_kit", flintSharpeningKit,
+        [ [ flintToolMaterial, flintToolMaterial ],
+          [ flintToolMaterial, flintToolMaterial ] ]);
+
 
 // !!! Smeltery !!!
 
@@ -581,6 +634,7 @@ val chestCoreCast = <tconstruct:cast>.withTag({PartType: "conarm:chest_core"});
 val helmetCoreCast = <tconstruct:cast>.withTag({PartType: "conarm:helmet_core"});
 val leggingsCoreCast = <tconstruct:cast>.withTag({PartType: "conarm:leggings_core"});
 val bootsCoreCast = <tconstruct:cast>.withTag({PartType: "conarm:boots_core"});
+val sharpeningKitCast = <tconstruct:cast>.withTag({PartType: "tconstruct:sharpening_kit"});
 
 Casting.addTableRecipe(toolRodCast, treatedWoodRod, liquidAlubrass, 144, true);
 Casting.addTableRecipe(axeHeadCast, woodAxeHead, liquidAlubrass, 144, true);
@@ -611,6 +665,7 @@ val chestCoreClayCast = <tconstruct:clay_cast>.withTag({PartType: "conarm:chest_
 val helmetCoreClayCast = <tconstruct:clay_cast>.withTag({PartType: "conarm:helmet_core"});
 val leggingsCoreClayCast = <tconstruct:clay_cast>.withTag({PartType: "conarm:leggings_core"});
 val bootsCoreClayCast = <tconstruct:clay_cast>.withTag({PartType: "conarm:boots_core"});
+val sharpeningKitClayCast = <tconstruct:clay_cast>.withTag({PartType: "tconstruct:sharpening_kit"});
 
 Casting.addTableRecipe(toolRodClayCast, treatedWoodRod, liquidClay, 288, true);
 Casting.addTableRecipe(axeHeadClayCast, woodAxeHead, liquidClay, 288, true);
@@ -669,6 +724,13 @@ Casting.addTableRecipe(ironKnifeBlade, knifeBladeClayCast, liquidIron, 144, true
 
 Casting.addTableRecipe(ironHammerHead, hammerHeadCast, liquidIron, 1152, false, 100);
 Casting.addTableRecipe(ironHammerHead, hammerHeadClayCast, liquidIron, 1152, true, 120);
+
+Casting.addTableRecipe(ironSharpeningKit, sharpeningKitCast, liquidIron, 288, false, 100);
+Casting.addTableRecipe(ironSharpeningKit, sharpeningKitClayCast, liquidIron, 288, true, 120);
+Casting.addTableRecipe(steelSharpeningKit, sharpeningKitCast, liquidSteel, 288, false, 100);
+Casting.addTableRecipe(steelSharpeningKit, sharpeningKitClayCast, liquidSteel, 288, true, 120);
+Casting.addTableRecipe(obsidianSharpeningKit, sharpeningKitCast, liquidObsidianAlloy, 288, false, 100);
+Casting.addTableRecipe(obsidianSharpeningKit, sharpeningKitClayCast, liquidObsidianAlloy, 288, true, 120);
 
 // Ender
 Casting.addTableRecipe(<contenttweaker:refined_ender_pearl>, null, liquidEnder, 250, false, 100);
