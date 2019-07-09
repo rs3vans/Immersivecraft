@@ -27,5 +27,11 @@ compressedQuartz3.register();
 val quartzStar = VanillaFactory.createItem("quartz_star");
 quartzStar.register();
 
+val woodStar = VanillaFactory.createItem("wood_star");
+woodStar.register();
+
+val starCast = VanillaFactory.createItem("star_cast");
+starCast.register();
+
 val refinedEnderPearl = VanillaFactory.createItem("refined_ender_pearl");
 refinedEnderPearl.register();

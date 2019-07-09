@@ -1,11 +1,13 @@
 {
   "materialMappings": {
-    "obsidian_ender_alloy_dust": 3,
-    "blaze_molten": 1,
-    "refined_ender_molten": 0,
-    "obsidian_ender_alloy_molten": 5,
-    "diamond_molten": 2,
-    "obsidian_ender_alloy_ingot": 4,
-    "obsidian_ender_alloy_block": 6
+    "soularium_ingot": 3,
+    "obsidian_ender_alloy_dust": 0,
+    "witherium_block": 7,
+    "soularium_block": 4,
+    "obsidian_ender_alloy_ingot": 1,
+    "witherium_dust": 5,
+    "soularium_dust": 2,
+    "witherium_ingot": 6,
+    "obsidian_ender_alloy_block": 8
   }
 }

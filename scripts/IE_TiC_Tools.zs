@@ -19,7 +19,6 @@ val obsidianIngotOre = <ore:ingotObsidianEnderAlloy>;
 
 val woodRod = <tconstruct:tool_rod>.withTag({Material: "wood"});
 val treatedWoodRod = <tconstruct:tool_rod>.withTag({Material: "treatedwood"});
-val firewoodRod = <tconstruct:tool_rod>.withTag({Material: "firewood"});
 val woodBinding = <tconstruct:binding>.withTag({"Material": "treatedwood"});
 val ironBinding = <tconstruct:binding>.withTag({"Material": "iron"});
 val steelBinding = <tconstruct:binding>.withTag({"Material": "steel"});
@@ -44,7 +43,6 @@ val steelPickHead = <tconstruct:pick_head>.withTag({"Material": "steel"});
 val obsidianPickHead = <tconstruct:pick_head>.withTag({"Material": "obsidianenderalloy"});
 val hempBowString = <tconstruct:bow_string>.withTag({"Material": "hemp"});
 val treatedWoodBowLimb = <tconstruct:bow_limb>.withTag({"Material": "treatedwood"});
-val stoneHammerHead = <tconstruct:hammer_head>.withTag({"Material": "stone"});
 val ironHammerHead = <tconstruct:hammer_head>.withTag({"Material": "iron"});
 val woodKnifeBlade = <tconstruct:knife_blade>.withTag({"Material": "treatedwood"});
 val ironKnifeBlade = <tconstruct:knife_blade>.withTag({"Material": "iron"});
@@ -71,19 +69,19 @@ val shears = <minecraft:shears>;
 
 val ironSword     = <tconstruct:broadsword>.withTag({Stats: {AttackSpeedMultiplier: 1.0 as float, MiningSpeed: 6.0  as float, FreeModifiers: 0, Durability: 279,  HarvestLevel: 2, Attack: 8.0  as float}, TinkerData: {Materials: ["treatedwood", "iron", "iron"],             Modifiers: []}});
 val steelSword    = <tconstruct:broadsword>.withTag({Stats: {AttackSpeedMultiplier: 3.0 as float, MiningSpeed: 10.0  as float, FreeModifiers: 0, Durability: 815,  HarvestLevel: 3, Attack: 11.0 as float}, TinkerData: {Materials: ["treatedwood", "steel", "iron"],           Modifiers: []}});
-val obsidianSword = <tconstruct:broadsword>.withTag({Stats: {AttackSpeedMultiplier: 6.0 as float, MiningSpeed: 23.0 as float, FreeModifiers: 0, Durability: 1247, HarvestLevel: 4, Attack: 17.0 as float}, TinkerData: {Materials: ["firewood", "obsidianenderalloy", "steel"], Modifiers: []}});
+val obsidianSword = <tconstruct:broadsword>.withTag({Stats: {AttackSpeedMultiplier: 6.0 as float, MiningSpeed: 23.0 as float, FreeModifiers: 0, Durability: 1247, HarvestLevel: 4, Attack: 17.0 as float}, TinkerData: {Materials: ["treatedwood", "obsidianenderalloy", "steel"], Modifiers: []}});
 
 val ironShovel     = <tconstruct:shovel>.withTag({Stats: {AttackSpeedMultiplier: 1.0 as float, MiningSpeed: 6.0  as float, FreeModifiers: 0, Durability: 279,  HarvestLevel: 2, Attack: 1.0 as float}, TinkerData: {Materials: ["treatedwood", "iron", "iron"],             Modifiers: []}});
 val steelShovel    = <tconstruct:shovel>.withTag({Stats: {AttackSpeedMultiplier: 2.0 as float, MiningSpeed: 10.0  as float, FreeModifiers: 0, Durability: 815,  HarvestLevel: 3, Attack: 2.0 as float}, TinkerData: {Materials: ["treatedwood", "steel", "iron"],           Modifiers: []}});
-val obsidianShovel = <tconstruct:shovel>.withTag({Stats: {AttackSpeedMultiplier: 3.0 as float, MiningSpeed: 23.0 as float, FreeModifiers: 0, Durability: 1247, HarvestLevel: 4, Attack: 3.0 as float}, TinkerData: {Materials: ["firewood", "obsidianenderalloy", "steel"], Modifiers: []}});
+val obsidianShovel = <tconstruct:shovel>.withTag({Stats: {AttackSpeedMultiplier: 3.0 as float, MiningSpeed: 23.0 as float, FreeModifiers: 0, Durability: 1247, HarvestLevel: 4, Attack: 3.0 as float}, TinkerData: {Materials: ["treatedwood", "obsidianenderalloy", "steel"], Modifiers: []}});
 
 val ironAxe     = <tconstruct:hatchet>.withTag({Stats: {AttackSpeedMultiplier: 1.0 as float, MiningSpeed: 6.0  as float, FreeModifiers: 0, Durability: 279,  HarvestLevel: 2, Attack: 9.0  as float}, TinkerData: {Materials: ["treatedwood", "iron", "iron"],             Modifiers: []}});
 val steelAxe    = <tconstruct:hatchet>.withTag({Stats: {AttackSpeedMultiplier: 2.0 as float, MiningSpeed: 10.0  as float, FreeModifiers: 0, Durability: 815,  HarvestLevel: 3, Attack: 12.0 as float}, TinkerData: {Materials: ["treatedwood", "steel", "iron"],           Modifiers: []}});
-val obsidianAxe = <tconstruct:hatchet>.withTag({Stats: {AttackSpeedMultiplier: 3.0 as float, MiningSpeed: 23.0 as float, FreeModifiers: 0, Durability: 1247, HarvestLevel: 4, Attack: 18.0 as float}, TinkerData: {Materials: ["firewood", "obsidianenderalloy", "steel"], Modifiers: []}});
+val obsidianAxe = <tconstruct:hatchet>.withTag({Stats: {AttackSpeedMultiplier: 3.0 as float, MiningSpeed: 23.0 as float, FreeModifiers: 0, Durability: 1247, HarvestLevel: 4, Attack: 18.0 as float}, TinkerData: {Materials: ["treatedwood", "obsidianenderalloy", "steel"], Modifiers: []}});
 
 val ironPick     = <tconstruct:pickaxe>.withTag({Stats: {AttackSpeedMultiplier: 1.0 as float, MiningSpeed: 6.0  as float, FreeModifiers: 0, Durability: 279,  HarvestLevel: 2, Attack: 3.0 as float}, TinkerData: {Materials: ["treatedwood", "iron", "iron"],             Modifiers: []}});
 val steelPick    = <tconstruct:pickaxe>.withTag({Stats: {AttackSpeedMultiplier: 2.0 as float, MiningSpeed: 10.0  as float, FreeModifiers: 0, Durability: 815,  HarvestLevel: 3, Attack: 4.0 as float}, TinkerData: {Materials: ["treatedwood", "steel", "iron"],           Modifiers: []}});
-val obsidianPick = <tconstruct:pickaxe>.withTag({Stats: {AttackSpeedMultiplier: 3.0 as float, MiningSpeed: 23.0 as float, FreeModifiers: 0, Durability: 1247, HarvestLevel: 4, Attack: 5.0 as float}, TinkerData: {Materials: ["firewood", "obsidianenderalloy", "steel"], Modifiers: []}});
+val obsidianPick = <tconstruct:pickaxe>.withTag({Stats: {AttackSpeedMultiplier: 3.0 as float, MiningSpeed: 23.0 as float, FreeModifiers: 0, Durability: 1247, HarvestLevel: 4, Attack: 5.0 as float}, TinkerData: {Materials: ["treatedwood", "obsidianenderalloy", "steel"], Modifiers: []}});
 
 val treatedWoodBow = <tconstruct:shortbow>.withTag({Stats: {AttackSpeedMultiplier: 2.0 as float, DrawSpeed: 2.0 as float, FreeModifiers: 0, ProjectileBonusDamage: 0.2 as float, Durability: 117, Attack: 10.0 as float, Range: 4.0 as float}, TinkerData: {Materials: ["treatedwood", "treatedwood", "hemp"], Modifiers: []}});
 
@@ -160,21 +158,10 @@ recipes.addShaped("immc/shears", shears,
 // Engineer's Hammer
 val engineerHammer = <immersiveengineering:tool>;
 recipes.removeShaped(engineerHammer);
-recipes.addShaped("immc/stone_hammer_head", stoneHammerHead,
-        [ [stoneToolMaterial, stoneToolMaterial],
-          [stoneToolMaterial, stoneToolMaterial] ]);
 recipes.addShaped("immc/engineers_hammer", engineerHammer,
         [ [null,    null,         ironHammerHead],
           [null,    <ore:string>, null],
           [woodRod, null,         null] ]);
-
-// Treated Wood
-Casting.addTableRecipe(treatedWoodStickOre.firstItem, stickOre, <liquid:creosote>, 50, true, 60);
-Casting.addTableRecipe(treatedWoodRod, woodRod, <liquid:creosote>, 100, true, 120);
-Casting.addBasinRecipe(treatedWoodPlankOre.firstItem, plankOre, <liquid:creosote>, 100, true, 120);
-
-// Firewood
-Casting.addTableRecipe(firewoodRod, treatedWoodRod, <liquid:blaze>, 500, true, 240);
 
 // Shears/Wire cutters
 val engineerCutters = <immersiveengineering:tool:1>;
@@ -218,7 +205,7 @@ Blueprint.addRecipe("Engineer's Tools", earmuffs, [ woolOre * 2, steelRodOre * 3
 Blueprint.addRecipe("Engineer's Tools", drill, [ grip * 2, steelComponent * 2, heavyEngBlock ]);
 Blueprint.addRecipe("Engineer's Tools", chemthrower, [ grip * 2, steelComponent * 2, fluidPipe * 2 ]);
 Blueprint.addRecipe("Engineer's Tools", revolver, [ grip * 2, revolverBarrel, revolverDrum, revolverHammer ]);
-Blueprint.addRecipe("Engineer's Tools", railgun, [ grip * 2, revolverBarrel, hvCapacitor, firewoodRod ]);
+Blueprint.addRecipe("Engineer's Tools", railgun, [ grip * 2, revolverBarrel, hvCapacitor, steelRodOre ]);
 
 Blueprint.addRecipe("Basic Tool Parts", treatedWoodRod, [ treatedWoodStickOre * 2 ]);
 Blueprint.addRecipe("Basic Tool Parts", woodBinding, [ treatedWoodStickOre * 2 ]);
@@ -247,10 +234,10 @@ Blueprint.addRecipe("Steel Tools & Armor", steelHelmet, [ steelHelmetCore, steel
 Blueprint.addRecipe("Steel Tools & Armor", steelLeggings, [ steelLeggingsCore, steelArmorPlates, leatherArmorTrim ]);
 Blueprint.addRecipe("Steel Tools & Armor", steelBoots, [ steelBootsCore, steelArmorPlates, leatherArmorTrim ]);
 
-Blueprint.addRecipe("Obsidian Ender Alloy Tools & Armor", obsidianSword, [ firewoodRod, steelGuard, obsidianBlade ]);
-Blueprint.addRecipe("Obsidian Ender Alloy Tools & Armor", obsidianShovel, [ firewoodRod, steelBinding, obsidianShovelHead ]);
-Blueprint.addRecipe("Obsidian Ender Alloy Tools & Armor", obsidianAxe, [ firewoodRod, steelBinding, obsidianAxeHead ]);
-Blueprint.addRecipe("Obsidian Ender Alloy Tools & Armor", obsidianPick, [ firewoodRod, steelBinding, obsidianPickHead ]);
+Blueprint.addRecipe("Obsidian Ender Alloy Tools & Armor", obsidianSword, [ treatedWoodRod, steelGuard, obsidianBlade ]);
+Blueprint.addRecipe("Obsidian Ender Alloy Tools & Armor", obsidianShovel, [ treatedWoodRod, steelBinding, obsidianShovelHead ]);
+Blueprint.addRecipe("Obsidian Ender Alloy Tools & Armor", obsidianAxe, [ treatedWoodRod, steelBinding, obsidianAxeHead ]);
+Blueprint.addRecipe("Obsidian Ender Alloy Tools & Armor", obsidianPick, [ treatedWoodRod, steelBinding, obsidianPickHead ]);
 Blueprint.addRecipe("Obsidian Ender Alloy Tools & Armor", obsidianChest, [ obsidianChestCore, obsidianArmorPlates, leatherArmorTrim ]);
 Blueprint.addRecipe("Obsidian Ender Alloy Tools & Armor", obsidianHelmet, [ obsidianHelmetCore, obsidianArmorPlates, leatherArmorTrim ]);
 Blueprint.addRecipe("Obsidian Ender Alloy Tools & Armor", obsidianLeggings, [ obsidianLeggingsCore, obsidianArmorPlates, leatherArmorTrim ]);

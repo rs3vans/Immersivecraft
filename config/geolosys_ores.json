@@ -42,7 +42,7 @@
   "quartz": {
     "minY": 10,
     "maxY": 32,
-    "chance": 16,
+    "chance": 6,
     "size": 40,
     "blacklist": [
       -1,
@@ -52,7 +52,7 @@
   "kimberlite": {
     "minY": 8,
     "maxY": 32,
-    "chance": 10,
+    "chance": 6,
     "size": 20,
     "blacklist": [
       -1,
@@ -62,7 +62,7 @@
   "beryl": {
     "minY": 8,
     "maxY": 32,
-    "chance": 10,
+    "chance": 6,
     "size": 20,
     "blacklist": [
       -1,

@@ -1,0 +1,16 @@
+setIcon(<tconstruct:cast, nbt:{PartType:"tconstruct:pick_head"}>)
+setTitle("Part of the Cast")
+setDescription("The smeltery will let you make all sorts of parts from molten materials. In order to make eacg part, however, you'll need to make the corresponding cast that goes with it...")
+
+hiddenUnless("triumph:immc/5_smeltery")
+
+setRequiresParents()
+addParent("triumph:immc/5_smeltery")
+
+setRequirements("any")
+
+criteria1 = addCriteria("Make a cast", "minecraft:inventory_changed")
+criteria1.addItem(<tconstruct:cast>)
+
+criteria2 = addCriteria("Make a clay cast", "minecraft:inventory_changed")
+criteria2.addItem(<tconstruct:clay_cast>)

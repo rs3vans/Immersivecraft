@@ -1,0 +1,11 @@
+setIcon(<minecraft:ender_pearl>)
+setTitle("A Mysterious Alloy")
+setDescription("Diamonds and emeralds are pretty to look at, but aren't too useful by themselves. Alloying them together, however, produces a mysterious substance known as 'Ender'. It'll take two of each in an Alloy Kiln to produce one pearl...")
+
+hiddenUnless("triumph:immc/5_eng_hammer")
+
+setRequiresParents()
+addParent("triumph:immc/6_alloy_kiln")
+
+criteria1 = addCriteria("Acquire an ender pearl", "minecraft:inventory_changed")
+criteria1.addItem(<minecraft:ender_pearl>)

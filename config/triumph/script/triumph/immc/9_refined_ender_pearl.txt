@@ -1,0 +1,11 @@
+setIcon(<contenttweaker:refined_ender_pearl>)
+setTitle("Mystery, Refined")
+setDescription("Those mysterious Ender Pearls can be further refined using a Blast Furnace, making them more useful in other crafting recipes.")
+
+hiddenUnless("triumph:immc/8_blast_furnace")
+
+setRequiresParents()
+addParent("triumph:immc/8_blast_furnace")
+
+criteria1 = addCriteria("Make a refined ender pearl", "minecraft:inventory_changed")
+criteria1.addItem(<contenttweaker:refined_ender_pearl>)

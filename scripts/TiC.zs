@@ -1,5 +1,4 @@
 #modloaded tconstruct
-#modloaded tcomplement
 
 import crafttweaker.item.IItemStack;
 import crafttweaker.data.IData;
@@ -63,6 +62,29 @@ for i in tconstructItems {
     }
 }
 
+// Liquids
+JEI.hide(<liquid:knightslime>);
+JEI.hide(<liquid:manyullyn>);
+JEI.hide(<liquid:cobalt>);
+JEI.hide(<liquid:ardite>);
+JEI.hide(<liquid:pigiron>);
+JEI.hide(<liquid:iron>);
+JEI.hide(<liquid:gold>);
+JEI.hide(<liquid:brass>);
+JEI.hide(<liquid:alubrass>);
+JEI.hide(<liquid:copper>);
+JEI.hide(<liquid:tin>);
+JEI.hide(<liquid:bronze>);
+JEI.hide(<liquid:zinc>);
+JEI.hide(<liquid:lead>);
+JEI.hide(<liquid:nickel>);
+JEI.hide(<liquid:silver>);
+JEI.hide(<liquid:electrum>);
+JEI.hide(<liquid:steel>);
+JEI.hide(<liquid:aluminum>);
+JEI.hide(<liquid:uranium>);
+JEI.hide(<liquid:constantan>);
+
 val armoryItemsToNotRemove = [
 ] as string[];
 
@@ -76,6 +98,265 @@ for i in armoryItems {
         JEI.removeAndHide(i);
     }
 }
+
+// These aren't in the mod's list for some reason...
+JEI.removeAndHide(<tconstruct:ingots:5>);
+JEI.removeAndHide(<tconstruct:metal:5>);
+JEI.removeAndHide(<tconstruct:nuggets:5>);
+JEI.removeAndHide(<tconstruct:bolt>.withTag({StatsOriginal: {AttackSpeedMultiplier: 1.0 as float, Accuracy: 1.0 as float, MiningSpeed: 7.07 as float, FreeModifiers: 3, Durability: 111, HarvestLevel: 4, Attack: 4.2 as float}, Stats: {AttackSpeedMultiplier: 1.0 as float, Accuracy: 1.0 as float, MiningSpeed: 7.07 as float, FreeModifiers: 3, Durability: 111, HarvestLevel: 4, Attack: 4.2 as float}, Special: {Categories: ["no_melee", "projectile", "tool"]}, TinkerData: {Materials: ["wood", "obsidian", "feather"], Modifiers: []}}));
+
+
+// !!! Tools !!!
+
+val flintToolMaterial = <ore:itemRawFlint>;
+val stickOre = <ore:stickWood>;
+val stringOre = <ore:string>;
+val hempOre = <ore:fiberHemp>;
+
+// Rods
+val woodRod = <tconstruct:tool_rod>.withTag({Material: "wood"});
+val treatedWoodRod = <tconstruct:tool_rod>.withTag({Material: "treatedwood"});
+JEI.addItem(treatedWoodRod);
+
+recipes.addShapeless("immc/wood_tool_rod", woodRod,
+        [ stickOre, stickOre ]);
+
+// Binding
+val woodBinding = <tconstruct:binding>.withTag({"Material": "treatedwood"});
+val ironBinding = <tconstruct:binding>.withTag({"Material": "iron"});
+val steelBinding = <tconstruct:binding>.withTag({"Material": "steel"});
+JEI.addItem(woodBinding);
+JEI.addItem(ironBinding);
+JEI.addItem(steelBinding);
+
+// Swords
+val woodGuard = <tconstruct:wide_guard>.withTag({"Material": "treatedwood"});
+val ironGuard = <tconstruct:wide_guard>.withTag({"Material": "iron"});
+val steelGuard = <tconstruct:wide_guard>.withTag({"Material": "steel"});
+JEI.addItem(woodGuard);
+JEI.addItem(ironGuard);
+JEI.addItem(steelGuard);
+
+val woodBlade = <tconstruct:sword_blade>.withTag({"Material": "treatedwood"});
+val ironBlade = <tconstruct:sword_blade>.withTag({"Material": "iron"});
+val steelBlade = <tconstruct:sword_blade>.withTag({"Material": "steel"});
+val obsidianBlade = <tconstruct:sword_blade>.withTag({"Material": "obsidianenderalloy"});
+JEI.addItem(woodBlade);
+JEI.addItem(ironBlade);
+JEI.addItem(steelBlade);
+JEI.addItem(obsidianBlade);
+
+// Shovels
+val woodShovelHead = <tconstruct:shovel_head>.withTag({"Material": "treatedwood"});
+val flintShovelHead = <tconstruct:shovel_head>.withTag({"Material": "flint"});
+val ironShovelHead = <tconstruct:shovel_head>.withTag({"Material": "iron"});
+val steelShovelHead = <tconstruct:shovel_head>.withTag({"Material": "steel"});
+val obsidianShovelHead = <tconstruct:shovel_head>.withTag({"Material": "obsidianenderalloy"});
+JEI.addItem(woodShovelHead);
+JEI.addItem(flintShovelHead);
+JEI.addItem(ironShovelHead);
+JEI.addItem(steelShovelHead);
+JEI.addItem(obsidianShovelHead);
+
+val flintShovel = <tconstruct:shovel>.withTag({Stats: {AttackSpeedMultiplier: 1.0 as float, MiningSpeed: 2.0 as float, FreeModifiers: 0, Durability: 132, HarvestLevel: 1, Attack: 1.0 as float}, TinkerData: {Materials: ["wood", "flint", "wood"], Modifiers: []}});
+JEI.addItem(flintShovel);
+recipes.addShaped("immc/flint_shovel_head", flintShovelHead,
+        [ [flintToolMaterial, flintToolMaterial],
+          [null,              flintToolMaterial] ]);
+recipes.addShaped("immc/flint_shovel", flintShovel,
+        [ [null,    flintShovelHead],
+          [woodRod, null           ] ]);
+
+// Axes
+val woodAxeHead = <tconstruct:axe_head>.withTag({"Material": "treatedwood"});
+val flintAxeHead = <tconstruct:axe_head>.withTag({"Material": "flint"});
+val ironAxeHead = <tconstruct:axe_head>.withTag({"Material": "iron"});
+val steelAxeHead = <tconstruct:axe_head>.withTag({"Material": "steel"});
+val obsidianAxeHead = <tconstruct:axe_head>.withTag({"Material": "obsidianenderalloy"});
+JEI.addItem(woodAxeHead);
+JEI.addItem(flintAxeHead);
+JEI.addItem(ironAxeHead);
+JEI.addItem(steelAxeHead);
+JEI.addItem(obsidianAxeHead);
+
+val flintAxe = <tconstruct:hatchet>.withTag({Stats: {AttackSpeedMultiplier: 1.0 as float, MiningSpeed: 2.0  as float, FreeModifiers: 0, Durability: 132, HarvestLevel: 1, Attack: 4.0  as float}, TinkerData: {Materials: ["wood", "flint", "wood"], Modifiers: []}});
+JEI.addItem(flintAxe);
+recipes.addShaped("immc/flint_axe_head", flintAxeHead,
+        [ [flintToolMaterial, flintToolMaterial],
+          [flintToolMaterial, null,            ] ]);
+recipes.addShaped("immc/flint_axe", flintAxe,
+        [ [null,    flintAxeHead],
+          [woodRod, null        ] ]);
+
+// Pickaxes
+val woodPickHead = <tconstruct:pick_head>.withTag({"Material": "treatedwood"});
+val flintPickHead = <tconstruct:pick_head>.withTag({"Material": "flint"});
+val ironPickHead = <tconstruct:pick_head>.withTag({"Material": "iron"});
+val steelPickHead = <tconstruct:pick_head>.withTag({"Material": "steel"});
+val obsidianPickHead = <tconstruct:pick_head>.withTag({"Material": "obsidianenderalloy"});
+JEI.addItem(woodPickHead);
+JEI.addItem(flintPickHead);
+JEI.addItem(ironPickHead);
+JEI.addItem(steelPickHead);
+JEI.addItem(obsidianPickHead);
+
+val flintPick = <tconstruct:pickaxe>.withTag({Stats: {AttackSpeedMultiplier: 1.0 as float, MiningSpeed: 2.0 as float, FreeModifiers: 0, Durability: 132, HarvestLevel: 1, Attack: 2.0 as float}, TinkerData: {Materials: ["wood", "flint", "wood"], Modifiers: []}});
+JEI.addItem(flintPick);
+recipes.addShaped("immc/flint_pick_head", flintPickHead,
+        [ [null,              flintToolMaterial, null],
+          [flintToolMaterial, null,              flintToolMaterial] ]);
+recipes.addShaped("immc/flint_pick", flintPick,
+        [ [null,    flintPickHead],
+          [woodRod, null         ] ]);
+
+// Bows
+val woodBowLimb = <tconstruct:bow_limb>.withTag({"Material": "wood"});
+val treatedWoodBowLimb = <tconstruct:bow_limb>.withTag({"Material": "treatedwood"});
+val stringBowString = <tconstruct:bow_string>.withTag({"Material": "string"});
+val hempBowString = <tconstruct:bow_string>.withTag({"Material": "hemp"});
+val woodBow = <tconstruct:shortbow>.withTag({Stats: {AttackSpeedMultiplier: 1.0 as float, DrawSpeed: 1.0 as float, FreeModifiers: 0, ProjectileBonusDamage: 0.0 as float, Durability: 35, Attack: 5.0 as float, Range: 2.0 as float}, TinkerData: {Materials: ["wood", "wood", "string"], Modifiers: []}});
+
+JEI.addItem(treatedWoodBowLimb);
+JEI.addItem(hempBowString);
+JEI.addItem(woodBow);
+
+recipes.addShaped("immc/string_bow_string", stringBowString,
+        [ [null, null, stringOre],
+          [null, stringOre, null],
+          [stringOre, null, null] ]);
+recipes.addShaped("immc/hemp_bow_string", hempBowString,
+        [ [null, null, hempOre],
+          [null, hempOre, null],
+          [hempOre, null, null] ]);
+
+recipes.addShaped("immc/wood_bow_limb", woodBowLimb,
+        [ [null, stickOre],
+          [stickOre, null],
+          [stickOre, null] ]);
+
+recipes.addShaped("immc/wood_bow", woodBow,
+        [ [null,        woodBowLimb    ],
+          [woodBowLimb, stringBowString] ]);
+
+// Others
+val ironHammerHead = <tconstruct:hammer_head>.withTag({"Material": "iron"});
+JEI.addItem(ironHammerHead);
+
+val woodKnifeBlade = <tconstruct:knife_blade>.withTag({"Material": "treatedwood"});
+val ironKnifeBlade = <tconstruct:knife_blade>.withTag({"Material": "iron"});
+JEI.addItem(woodKnifeBlade);
+JEI.addItem(ironKnifeBlade);
+
+// Armor
+val leather = <improvedbackpacks:tanned_leather>;
+val leatherArmorTrim    = <conarm:armor_trim>.withTag({"Material": "leather"});
+val leatherArmorPlates  = <conarm:armor_plate>.withTag({"Material": "leather"});
+val ironArmorPlates     = <conarm:armor_plate>.withTag({"Material": "iron"});
+val steelArmorPlates    = <conarm:armor_plate>.withTag({"Material": "iron"});
+val obsidianArmorPlates = <conarm:armor_plate>.withTag({"Material": "obsidianenderalloy"});
+JEI.addItem(leatherArmorTrim);
+JEI.addItem(leatherArmorPlates);
+JEI.addItem(ironArmorPlates);
+JEI.addItem(steelArmorPlates);
+JEI.addItem(obsidianArmorPlates);
+
+val leatherChestCore  = <conarm:chest_core>.withTag({"Material": "leather"});
+val ironChestCore     = <conarm:chest_core>.withTag({"Material": "iron"});
+val steelChestCore    = <conarm:chest_core>.withTag({"Material": "iron"});
+val obsidianChestCore = <conarm:chest_core>.withTag({"Material": "obsidianenderalloy"});
+JEI.addItem(leatherChestCore);
+JEI.addItem(ironChestCore);
+JEI.addItem(steelChestCore);
+JEI.addItem(obsidianChestCore);
+
+val leatherHelmetCore  = <conarm:helmet_core>.withTag({"Material": "leather"});
+val ironHelmetCore     = <conarm:helmet_core>.withTag({"Material": "iron"});
+val steelHelmetCore    = <conarm:helmet_core>.withTag({"Material": "iron"});
+val obsidianHelmetCore = <conarm:helmet_core>.withTag({"Material": "obsidianenderalloy"});
+JEI.addItem(leatherHelmetCore);
+JEI.addItem(ironHelmetCore);
+JEI.addItem(steelHelmetCore);
+JEI.addItem(obsidianHelmetCore);
+
+val leatherLeggingsCore  = <conarm:leggings_core>.withTag({"Material": "leather"});
+val ironLeggingsCore     = <conarm:leggings_core>.withTag({"Material": "iron"});
+val steelLeggingsCore    = <conarm:leggings_core>.withTag({"Material": "iron"});
+val obsidianLeggingsCore = <conarm:leggings_core>.withTag({"Material": "obsidianenderalloy"});
+JEI.addItem(leatherLeggingsCore);
+JEI.addItem(ironLeggingsCore);
+JEI.addItem(steelLeggingsCore);
+JEI.addItem(obsidianLeggingsCore);
+
+val leatherBootsCore  = <conarm:boots_core>.withTag({"Material": "leather"});
+val ironBootsCore     = <conarm:boots_core>.withTag({"Material": "iron"});
+val steelBootsCore    = <conarm:boots_core>.withTag({"Material": "iron"});
+val obsidianBootsCore = <conarm:boots_core>.withTag({"Material": "obsidianenderalloy"});
+JEI.addItem(leatherBootsCore);
+JEI.addItem(ironBootsCore);
+JEI.addItem(steelBootsCore);
+JEI.addItem(obsidianBootsCore);
+
+val leatherChest    = <conarm:chestplate>.withTag({Stats: {Toughness: 0.0 as float, FreeModifiers: 0, Durability: 32,  Defense: 5.0 as float}, TinkerData: {Materials: ["leather", "leather", "leather"], Modifiers: []}});
+val leatherHelmet   = <conarm:helmet>.withTag({Stats:     {Toughness: 0.0 as float, FreeModifiers: 0, Durability: 32,  Defense: 4.0 as float}, TinkerData: {Materials: ["leather", "leather", "leather"], Modifiers: []}});
+val leatherLeggings = <conarm:leggings>.withTag({Stats:   {Toughness: 0.0 as float, FreeModifiers: 0, Durability: 32,  Defense: 4.0 as float}, TinkerData: {Materials: ["leather", "leather", "leather"], Modifiers: []}});
+val leatherBoots    = <conarm:boots>.withTag({Stats:      {Toughness: 0.0 as float, FreeModifiers: 0, Durability: 32,  Defense: 3.0 as float}, TinkerData: {Materials: ["leather", "leather", "leather"], Modifiers: []}});
+JEI.addItem(leatherChest);
+JEI.addItem(leatherHelmet);
+JEI.addItem(leatherLeggings);
+JEI.addItem(leatherBoots);
+
+recipes.addShaped("immc/leather_armor_trim", leatherArmorTrim,
+        [ [ leather, null,    leather ],
+          [ null,    leather, null ],
+          [ leather, null,    leather ] ]);
+recipes.addShaped("immc/leather_armor_plates", leatherArmorPlates,
+        [ [ null,    leather, leather ],
+          [ leather, leather, leather ],
+          [ leather, leather, null ] ]);
+
+recipes.addShaped("immc/leather_chest_core", leatherChestCore,
+        [ [ leather, null,    leather ],
+          [ leather, leather, leather ],
+          [ leather, leather, leather ] ]);
+recipes.addShaped("immc/leather_helmet_core", leatherHelmetCore,
+        [ [ leather, leather, leather ],
+          [ leather, null,    leather ] ]);
+recipes.addShaped("immc/leather_leggings_core", leatherLeggingsCore,
+        [ [ leather, leather, leather ],
+          [ leather, null,    leather ],
+          [ leather, null,    leather ] ]);
+recipes.addShaped("immc/leather_boots_core", leatherBootsCore,
+        [ [ leather, null, leather ],
+          [ leather, null, leather ] ]);
+
+recipes.addShapeless("immc/leather_chest", leatherChest,
+        [ leatherChestCore, leatherArmorPlates, leatherArmorTrim ]);
+recipes.addShapeless("immc/leather_helmet", leatherHelmet,
+        [ leatherHelmetCore, leatherArmorPlates, leatherArmorTrim ]);
+recipes.addShapeless("immc/leather_leggings", leatherLeggings,
+        [ leatherLeggingsCore, leatherArmorPlates, leatherArmorTrim ]);
+recipes.addShapeless("immc/leather_boots", leatherBoots,
+        [ leatherBootsCore, leatherArmorPlates, leatherArmorTrim ]);
+
+// Sharpening Kits
+val sharpeningKit = <tconstruct:sharpening_kit>;
+val flintSharpeningKit = sharpeningKit.withTag({Material: "flint"});
+val ironSharpeningKit = sharpeningKit.withTag({Material: "iron"});
+val steelSharpeningKit = sharpeningKit.withTag({Material: "steel"});
+val obsidianSharpeningKit = sharpeningKit.withTag({Material: "obsidianenderalloy"});
+
+JEI.addItem(flintSharpeningKit);
+JEI.addItem(ironSharpeningKit);
+JEI.addItem(steelSharpeningKit);
+JEI.addItem(obsidianSharpeningKit);
+
+recipes.addShaped("immc/flint_sharpening_kit", flintSharpeningKit,
+        [ [ flintToolMaterial, flintToolMaterial ],
+          [ flintToolMaterial, flintToolMaterial ] ]);
+
+
+/*
+// !!! Smeltery !!!
 
 val itemsWithMaterialCastingRecipesToRemove = [
     <tconstruct:sharpening_kit>,
@@ -205,34 +486,7 @@ Casting.removeBasinRecipe(<immersiveengineering:storage:6>);
 Casting.removeBasinRecipe(<immersiveengineering:storage:7>);
 Casting.removeBasinRecipe(<immersiveengineering:storage:8>);
 
-// These aren't in the mod's list for some reason...
-JEI.removeAndHide(<tconstruct:ingots:5>);
-JEI.removeAndHide(<tconstruct:metal:5>);
-JEI.removeAndHide(<tconstruct:nuggets:5>);
-JEI.removeAndHide(<tconstruct:bolt>.withTag({StatsOriginal: {AttackSpeedMultiplier: 1.0 as float, Accuracy: 1.0 as float, MiningSpeed: 7.07 as float, FreeModifiers: 3, Durability: 111, HarvestLevel: 4, Attack: 4.2 as float}, Stats: {AttackSpeedMultiplier: 1.0 as float, Accuracy: 1.0 as float, MiningSpeed: 7.07 as float, FreeModifiers: 3, Durability: 111, HarvestLevel: 4, Attack: 4.2 as float}, Special: {Categories: ["no_melee", "projectile", "tool"]}, TinkerData: {Materials: ["wood", "obsidian", "feather"], Modifiers: []}}));
-
-// Liquids
-JEI.hide(<liquid:purpleslime>);
-JEI.hide(<liquid:knightslime>);
-JEI.hide(<liquid:manyullyn>);
-JEI.hide(<liquid:cobalt>);
-JEI.hide(<liquid:ardite>);
-JEI.hide(<liquid:pigiron>);
-JEI.hide(<liquid:blood>);
-JEI.hide(<liquid:dirt>);
-JEI.hide(<liquid:milk>);
-JEI.hide(<forge:bucketfilled>.withTag({"FluidName": "purpleslime", "Amount": 1000}));
-JEI.hide(<forge:bucketfilled>.withTag({"FluidName": "knightslime", "Amount": 1000}));
-JEI.hide(<forge:bucketfilled>.withTag({"FluidName": "manyullyn", "Amount": 1000}));
-JEI.hide(<forge:bucketfilled>.withTag({"FluidName": "cobalt", "Amount": 1000}));
-JEI.hide(<forge:bucketfilled>.withTag({"FluidName": "ardite", "Amount": 1000}));
-JEI.hide(<forge:bucketfilled>.withTag({"FluidName": "pigiron", "Amount": 1000}));
-JEI.hide(<forge:bucketfilled>.withTag({"FluidName": "blood", "Amount": 1000}));
-JEI.hide(<forge:bucketfilled>.withTag({"FluidName": "dirt", "Amount": 1000}));
-
-// Casts
 JEI.removeAndHide(<tconstruct:cast>);
-JEI.removeAndHide(<tconstruct:cast>.withTag({PartType: "tconstruct:pan_head"}));
 JEI.removeAndHide(<tconstruct:cast>.withTag({PartType: "tconstruct:tough_tool_rod"}));
 JEI.removeAndHide(<tconstruct:cast>.withTag({PartType: "tconstruct:excavator_head"}));
 JEI.removeAndHide(<tconstruct:cast>.withTag({PartType: "tconstruct:sign_head"}));
@@ -247,7 +501,6 @@ JEI.removeAndHide(<tconstruct:cast>.withTag({PartType: "tconstruct:hand_guard"})
 JEI.removeAndHide(<tconstruct:cast>.withTag({PartType: "tconstruct:broad_axe_head"}));
 JEI.removeAndHide(<tconstruct:cast>.withTag({PartType: "tconstruct:tough_binding"}));
 JEI.removeAndHide(<tconstruct:clay_cast>);
-JEI.removeAndHide(<tconstruct:clay_cast>.withTag({PartType: "tconstruct:pan_head"}));
 JEI.removeAndHide(<tconstruct:clay_cast>.withTag({PartType: "tconstruct:tough_tool_rod"}));
 JEI.removeAndHide(<tconstruct:clay_cast>.withTag({PartType: "tconstruct:excavator_head"}));
 JEI.removeAndHide(<tconstruct:clay_cast>.withTag({PartType: "tconstruct:sign_head"}));
@@ -261,259 +514,6 @@ JEI.removeAndHide(<tconstruct:clay_cast>.withTag({PartType: "tconstruct:scythe_h
 JEI.removeAndHide(<tconstruct:clay_cast>.withTag({PartType: "tconstruct:hand_guard"}));
 JEI.removeAndHide(<tconstruct:clay_cast>.withTag({PartType: "tconstruct:broad_axe_head"}));
 JEI.removeAndHide(<tconstruct:clay_cast>.withTag({PartType: "tconstruct:tough_binding"}));
-
-val flintToolMaterial = <ore:itemRawFlint>;
-val stickOre = <ore:stickWood>;
-val stringOre = <ore:string>;
-val hempOre = <ore:fiberHemp>;
-
-// Rods
-val woodRod = <tconstruct:tool_rod>.withTag({Material: "wood"});
-val treatedWoodRod = <tconstruct:tool_rod>.withTag({Material: "treatedwood"});
-val fireWoodRod = <tconstruct:tool_rod>.withTag({Material: "firewood"});
-JEI.addItem(treatedWoodRod);
-JEI.addItem(fireWoodRod);
-
-recipes.addShapeless("immc/wood_tool_rod", woodRod,
-        [ stickOre, stickOre ]);
-
-// Binding
-val woodBinding = <tconstruct:binding>.withTag({"Material": "treatedwood"});
-val ironBinding = <tconstruct:binding>.withTag({"Material": "iron"});
-val steelBinding = <tconstruct:binding>.withTag({"Material": "steel"});
-JEI.addItem(woodBinding);
-JEI.addItem(ironBinding);
-JEI.addItem(steelBinding);
-
-// Swords
-val woodGuard = <tconstruct:wide_guard>.withTag({"Material": "treatedwood"});
-val ironGuard = <tconstruct:wide_guard>.withTag({"Material": "iron"});
-val steelGuard = <tconstruct:wide_guard>.withTag({"Material": "steel"});
-JEI.addItem(woodGuard);
-JEI.addItem(ironGuard);
-JEI.addItem(steelGuard);
-
-val woodBlade = <tconstruct:sword_blade>.withTag({"Material": "treatedwood"});
-val ironBlade = <tconstruct:sword_blade>.withTag({"Material": "iron"});
-val steelBlade = <tconstruct:sword_blade>.withTag({"Material": "steel"});
-val obsidianBlade = <tconstruct:sword_blade>.withTag({"Material": "obsidianenderalloy"});
-JEI.addItem(woodBlade);
-JEI.addItem(ironBlade);
-JEI.addItem(steelBlade);
-JEI.addItem(obsidianBlade);
-
-// Shovels
-val woodShovelHead = <tconstruct:shovel_head>.withTag({"Material": "treatedwood"});
-val flintShovelHead = <tconstruct:shovel_head>.withTag({"Material": "flint"});
-val ironShovelHead = <tconstruct:shovel_head>.withTag({"Material": "iron"});
-val steelShovelHead = <tconstruct:shovel_head>.withTag({"Material": "steel"});
-val obsidianShovelHead = <tconstruct:shovel_head>.withTag({"Material": "obsidianenderalloy"});
-JEI.addItem(woodShovelHead);
-JEI.addItem(flintShovelHead);
-JEI.addItem(ironShovelHead);
-JEI.addItem(steelShovelHead);
-JEI.addItem(obsidianShovelHead);
-
-val flintShovel = <tconstruct:shovel>.withTag({Stats: {AttackSpeedMultiplier: 1.0 as float, MiningSpeed: 2.0 as float, FreeModifiers: 0, Durability: 132, HarvestLevel: 1, Attack: 1.0 as float}, TinkerData: {Materials: ["wood", "flint", "wood"], Modifiers: []}});
-JEI.addItem(flintShovel);
-recipes.addShaped("immc/flint_shovel_head", flintShovelHead,
-        [ [flintToolMaterial, flintToolMaterial],
-          [null,              flintToolMaterial] ]);
-recipes.addShaped("immc/flint_shovel", flintShovel,
-        [ [null,    flintShovelHead],
-          [woodRod, null           ] ]);
-
-// Axes
-val woodAxeHead = <tconstruct:axe_head>.withTag({"Material": "treatedwood"});
-val flintAxeHead = <tconstruct:axe_head>.withTag({"Material": "flint"});
-val ironAxeHead = <tconstruct:axe_head>.withTag({"Material": "iron"});
-val steelAxeHead = <tconstruct:axe_head>.withTag({"Material": "steel"});
-val obsidianAxeHead = <tconstruct:axe_head>.withTag({"Material": "obsidianenderalloy"});
-JEI.addItem(woodAxeHead);
-JEI.addItem(flintAxeHead);
-JEI.addItem(ironAxeHead);
-JEI.addItem(steelAxeHead);
-JEI.addItem(obsidianAxeHead);
-
-val flintAxe = <tconstruct:hatchet>.withTag({Stats: {AttackSpeedMultiplier: 1.0 as float, MiningSpeed: 2.0  as float, FreeModifiers: 0, Durability: 132, HarvestLevel: 1, Attack: 4.0  as float}, TinkerData: {Materials: ["wood", "flint", "wood"], Modifiers: []}});
-JEI.addItem(flintAxe);
-recipes.addShaped("immc/flint_axe_head", flintAxeHead,
-        [ [flintToolMaterial, flintToolMaterial],
-          [flintToolMaterial, null,            ] ]);
-recipes.addShaped("immc/flint_axe", flintAxe,
-        [ [null,    flintAxeHead],
-          [woodRod, null        ] ]);
-
-// Pickaxes
-val woodPickHead = <tconstruct:pick_head>.withTag({"Material": "treatedwood"});
-val flintPickHead = <tconstruct:pick_head>.withTag({"Material": "flint"});
-val ironPickHead = <tconstruct:pick_head>.withTag({"Material": "iron"});
-val steelPickHead = <tconstruct:pick_head>.withTag({"Material": "steel"});
-val obsidianPickHead = <tconstruct:pick_head>.withTag({"Material": "obsidianenderalloy"});
-JEI.addItem(woodPickHead);
-JEI.addItem(flintPickHead);
-JEI.addItem(ironPickHead);
-JEI.addItem(steelPickHead);
-JEI.addItem(obsidianPickHead);
-
-val flintPick = <tconstruct:pickaxe>.withTag({Stats: {AttackSpeedMultiplier: 1.0 as float, MiningSpeed: 2.0 as float, FreeModifiers: 0, Durability: 132, HarvestLevel: 1, Attack: 2.0 as float}, TinkerData: {Materials: ["wood", "flint", "wood"], Modifiers: []}});
-JEI.addItem(flintPick);
-recipes.addShaped("immc/flint_pick_head", flintPickHead,
-        [ [null,              flintToolMaterial, null],
-          [flintToolMaterial, null,              flintToolMaterial] ]);
-recipes.addShaped("immc/flint_pick", flintPick,
-        [ [null,    flintPickHead],
-          [woodRod, null         ] ]);
-
-// Bows
-val woodBowLimb = <tconstruct:bow_limb>.withTag({"Material": "wood"});
-val treatedWoodBowLimb = <tconstruct:bow_limb>.withTag({"Material": "treatedwood"});
-val stringBowString = <tconstruct:bow_string>.withTag({"Material": "string"});
-val hempBowString = <tconstruct:bow_string>.withTag({"Material": "hemp"});
-val woodBow = <tconstruct:shortbow>.withTag({Stats: {AttackSpeedMultiplier: 1.0 as float, DrawSpeed: 1.0 as float, FreeModifiers: 0, ProjectileBonusDamage: 0.0 as float, Durability: 35, Attack: 5.0 as float, Range: 2.0 as float}, TinkerData: {Materials: ["wood", "wood", "string"], Modifiers: []}});
-
-JEI.addItem(treatedWoodBowLimb);
-JEI.addItem(hempBowString);
-JEI.addItem(woodBow);
-
-recipes.addShaped("immc/string_bow_string", stringBowString,
-        [ [null, null, stringOre],
-          [null, stringOre, null],
-          [stringOre, null, null] ]);
-recipes.addShaped("immc/hemp_bow_string", hempBowString,
-        [ [null, null, hempOre],
-          [null, hempOre, null],
-          [hempOre, null, null] ]);
-
-recipes.addShaped("immc/wood_bow_limb", woodBowLimb,
-        [ [null, stickOre],
-          [stickOre, null],
-          [stickOre, null] ]);
-
-recipes.addShaped("immc/wood_bow", woodBow,
-        [ [null,        woodBowLimb    ],
-          [woodBowLimb, stringBowString] ]);
-
-// Others
-val stoneHammerHead = <tconstruct:hammer_head>.withTag({"Material": "stone"});
-val ironHammerHead = <tconstruct:hammer_head>.withTag({"Material": "iron"});
-JEI.addItem(stoneHammerHead);
-JEI.addItem(ironHammerHead);
-
-val woodKnifeBlade = <tconstruct:knife_blade>.withTag({"Material": "treatedwood"});
-val ironKnifeBlade = <tconstruct:knife_blade>.withTag({"Material": "iron"});
-JEI.addItem(woodKnifeBlade);
-JEI.addItem(ironKnifeBlade);
-
-// Armor
-val leather = <improvedbackpacks:tanned_leather>;
-val leatherArmorTrim    = <conarm:armor_trim>.withTag({"Material": "leather"});
-val leatherArmorPlates  = <conarm:armor_plate>.withTag({"Material": "leather"});
-val ironArmorPlates     = <conarm:armor_plate>.withTag({"Material": "iron"});
-val steelArmorPlates    = <conarm:armor_plate>.withTag({"Material": "iron"});
-val obsidianArmorPlates = <conarm:armor_plate>.withTag({"Material": "obsidianenderalloy"});
-JEI.addItem(leatherArmorTrim);
-JEI.addItem(leatherArmorPlates);
-JEI.addItem(ironArmorPlates);
-JEI.addItem(steelArmorPlates);
-JEI.addItem(obsidianArmorPlates);
-
-val leatherChestCore  = <conarm:chest_core>.withTag({"Material": "leather"});
-val ironChestCore     = <conarm:chest_core>.withTag({"Material": "iron"});
-val steelChestCore    = <conarm:chest_core>.withTag({"Material": "iron"});
-val obsidianChestCore = <conarm:chest_core>.withTag({"Material": "obsidianenderalloy"});
-JEI.addItem(leatherChestCore);
-JEI.addItem(ironChestCore);
-JEI.addItem(steelChestCore);
-JEI.addItem(obsidianChestCore);
-
-val leatherHelmetCore  = <conarm:helmet_core>.withTag({"Material": "leather"});
-val ironHelmetCore     = <conarm:helmet_core>.withTag({"Material": "iron"});
-val steelHelmetCore    = <conarm:helmet_core>.withTag({"Material": "iron"});
-val obsidianHelmetCore = <conarm:helmet_core>.withTag({"Material": "obsidianenderalloy"});
-JEI.addItem(leatherHelmetCore);
-JEI.addItem(ironHelmetCore);
-JEI.addItem(steelHelmetCore);
-JEI.addItem(obsidianHelmetCore);
-
-val leatherLeggingsCore  = <conarm:leggings_core>.withTag({"Material": "leather"});
-val ironLeggingsCore     = <conarm:leggings_core>.withTag({"Material": "iron"});
-val steelLeggingsCore    = <conarm:leggings_core>.withTag({"Material": "iron"});
-val obsidianLeggingsCore = <conarm:leggings_core>.withTag({"Material": "obsidianenderalloy"});
-JEI.addItem(leatherLeggingsCore);
-JEI.addItem(ironLeggingsCore);
-JEI.addItem(steelLeggingsCore);
-JEI.addItem(obsidianLeggingsCore);
-
-val leatherBootsCore  = <conarm:boots_core>.withTag({"Material": "leather"});
-val ironBootsCore     = <conarm:boots_core>.withTag({"Material": "iron"});
-val steelBootsCore    = <conarm:boots_core>.withTag({"Material": "iron"});
-val obsidianBootsCore = <conarm:boots_core>.withTag({"Material": "obsidianenderalloy"});
-JEI.addItem(leatherBootsCore);
-JEI.addItem(ironBootsCore);
-JEI.addItem(steelBootsCore);
-JEI.addItem(obsidianBootsCore);
-
-val leatherChest    = <conarm:chestplate>.withTag({Stats: {Toughness: 0.0 as float, FreeModifiers: 0, Durability: 32,  Defense: 5.0 as float}, TinkerData: {Materials: ["leather", "leather", "leather"], Modifiers: []}});
-val leatherHelmet   = <conarm:helmet>.withTag({Stats:     {Toughness: 0.0 as float, FreeModifiers: 0, Durability: 32,  Defense: 4.0 as float}, TinkerData: {Materials: ["leather", "leather", "leather"], Modifiers: []}});
-val leatherLeggings = <conarm:leggings>.withTag({Stats:   {Toughness: 0.0 as float, FreeModifiers: 0, Durability: 32,  Defense: 4.0 as float}, TinkerData: {Materials: ["leather", "leather", "leather"], Modifiers: []}});
-val leatherBoots    = <conarm:boots>.withTag({Stats:      {Toughness: 0.0 as float, FreeModifiers: 0, Durability: 32,  Defense: 3.0 as float}, TinkerData: {Materials: ["leather", "leather", "leather"], Modifiers: []}});
-JEI.addItem(leatherChest);
-JEI.addItem(leatherHelmet);
-JEI.addItem(leatherLeggings);
-JEI.addItem(leatherBoots);
-
-recipes.addShaped("immc/leather_armor_trim", leatherArmorTrim,
-        [ [ leather, null,    leather ],
-          [ null,    leather, null ],
-          [ leather, null,    leather ] ]);
-recipes.addShaped("immc/leather_armor_plates", leatherArmorPlates,
-        [ [ null,    leather, leather ],
-          [ leather, leather, leather ],
-          [ leather, leather, null ] ]);
-
-recipes.addShaped("immc/leather_chest_core", leatherChestCore,
-        [ [ leather, null,    leather ],
-          [ leather, leather, leather ],
-          [ leather, leather, leather ] ]);
-recipes.addShaped("immc/leather_helmet_core", leatherHelmetCore,
-        [ [ leather, leather, leather ],
-          [ leather, null,    leather ] ]);
-recipes.addShaped("immc/leather_leggings_core", leatherLeggingsCore,
-        [ [ leather, leather, leather ],
-          [ leather, null,    leather ],
-          [ leather, null,    leather ] ]);
-recipes.addShaped("immc/leather_boots_core", leatherBootsCore,
-        [ [ leather, null, leather ],
-          [ leather, null, leather ] ]);
-
-recipes.addShapeless("immc/leather_chest", leatherChest,
-        [ leatherChestCore, leatherArmorPlates, leatherArmorTrim ]);
-recipes.addShapeless("immc/leather_helmet", leatherHelmet,
-        [ leatherHelmetCore, leatherArmorPlates, leatherArmorTrim ]);
-recipes.addShapeless("immc/leather_leggings", leatherLeggings,
-        [ leatherLeggingsCore, leatherArmorPlates, leatherArmorTrim ]);
-recipes.addShapeless("immc/leather_boots", leatherBoots,
-        [ leatherBootsCore, leatherArmorPlates, leatherArmorTrim ]);
-
-// Sharpening Kits
-val sharpeningKit = <tconstruct:sharpening_kit>;
-val flintSharpeningKit = sharpeningKit.withTag({Material: "flint"});
-val ironSharpeningKit = sharpeningKit.withTag({Material: "iron"});
-val steelSharpeningKit = sharpeningKit.withTag({Material: "steel"});
-val obsidianSharpeningKit = sharpeningKit.withTag({Material: "obsidianenderalloy"});
-
-JEI.addItem(flintSharpeningKit);
-JEI.addItem(ironSharpeningKit);
-JEI.addItem(steelSharpeningKit);
-JEI.addItem(obsidianSharpeningKit);
-
-recipes.addShaped("immc/flint_sharpening_kit", flintSharpeningKit,
-        [ [ flintToolMaterial, flintToolMaterial ],
-          [ flintToolMaterial, flintToolMaterial ] ]);
-
-
-// !!! Smeltery !!!
 
 
 // ~~ Smeltery parts ~~
@@ -596,15 +596,25 @@ JEI.removeAndHide(<tcomplement:porcelain_casting:1>);
 
 // ~~ Casting ~~
 
+val lava = <liquid:lava>;
 val liquidClay = <liquid:clay>;
 val liquidAlubrass = <liquid:alubrass>;
 val liquidIron = <liquid:iron>;
 val liquidSteel = <liquid:steel>;
 val liquidDiamond = <liquid:diamond>;
-val liquidEnder = <liquid:refined_ender>;
+val liquidEmerald = <liquid:emerald>;
+val liquidEnder = <liquid:ender>;
+val liquidRefinedEnder = <liquid:refined_ender>;
 val liquidObsidian = <liquid:obsidian>;
 val liquidObsidianAlloy = <liquid:obsidian_ender_alloy>;
+val liquidRedstone = <liquid:redstone>;
+val liquidElectrum = <liquid:electrum>;
+val liquidGlowstone = <liquid:glowstone>;
+val liquidQuartz = <liquid:quartz>;
+val liquidUranium = <liquid:uranium>;
 val liquidBlaze = <liquid:blaze>;
+val liquidSoul = <liquid:soularium>;
+val liquidWither = <liquid:witherium>;
 
 // Buckets
 recipes.remove(<minecraft:bucket>);
@@ -618,6 +628,7 @@ if (loadedMods has "ceramics") {
         Casting.removeTableRecipe(<tcomplement:cast>, <liquid:gold>);
 }
 
+// Tools
 val toolRodCast = <tconstruct:cast>.withTag({PartType: "tconstruct:tool_rod"});
 val axeHeadCast = <tconstruct:cast>.withTag({PartType: "tconstruct:axe_head"});
 val shovelHeadCast = <tconstruct:cast>.withTag({PartType: "tconstruct:shovel_head"});
@@ -635,6 +646,7 @@ val helmetCoreCast = <tconstruct:cast>.withTag({PartType: "conarm:helmet_core"})
 val leggingsCoreCast = <tconstruct:cast>.withTag({PartType: "conarm:leggings_core"});
 val bootsCoreCast = <tconstruct:cast>.withTag({PartType: "conarm:boots_core"});
 val sharpeningKitCast = <tconstruct:cast>.withTag({PartType: "tconstruct:sharpening_kit"});
+val panHeadCast = <tconstruct:cast>.withTag({PartType: "tconstruct:pan_head"});
 
 Casting.addTableRecipe(toolRodCast, treatedWoodRod, liquidAlubrass, 144, true);
 Casting.addTableRecipe(axeHeadCast, woodAxeHead, liquidAlubrass, 144, true);
@@ -645,7 +657,6 @@ Casting.addTableRecipe(knifeBladeCast, woodKnifeBlade, liquidAlubrass, 144, true
 Casting.addTableRecipe(guardCast, woodGuard, liquidAlubrass, 144, true);
 Casting.addTableRecipe(pickHeadCast, woodPickHead, liquidAlubrass, 144, true);
 Casting.addTableRecipe(hammerHeadCast, stoneHammerHead, liquidAlubrass, 144, true);
-//Casting.addTableRecipe(bowLimbCast, stoneHammerHead, liquidAlubrass, 144, true);
 Casting.addTableRecipe(chestCoreCast, leatherChestCore, liquidAlubrass, 144, true);
 Casting.addTableRecipe(helmetCoreCast, leatherHelmetCore, liquidAlubrass, 144, true);
 Casting.addTableRecipe(leggingsCoreCast, leatherLeggingsCore, liquidAlubrass, 144, true);
@@ -666,6 +677,7 @@ val helmetCoreClayCast = <tconstruct:clay_cast>.withTag({PartType: "conarm:helme
 val leggingsCoreClayCast = <tconstruct:clay_cast>.withTag({PartType: "conarm:leggings_core"});
 val bootsCoreClayCast = <tconstruct:clay_cast>.withTag({PartType: "conarm:boots_core"});
 val sharpeningKitClayCast = <tconstruct:clay_cast>.withTag({PartType: "tconstruct:sharpening_kit"});
+val panHeadClayCast = <tconstruct:clay_cast>.withTag({PartType: "tconstruct:pan_head"});
 
 Casting.addTableRecipe(toolRodClayCast, treatedWoodRod, liquidClay, 288, true);
 Casting.addTableRecipe(axeHeadClayCast, woodAxeHead, liquidClay, 288, true);
@@ -732,22 +744,40 @@ Casting.addTableRecipe(steelSharpeningKit, sharpeningKitClayCast, liquidSteel, 2
 Casting.addTableRecipe(obsidianSharpeningKit, sharpeningKitCast, liquidObsidianAlloy, 288, false, 100);
 Casting.addTableRecipe(obsidianSharpeningKit, sharpeningKitClayCast, liquidObsidianAlloy, 288, true, 120);
 
+val starCast = <contenttweaker:star_cast>;
+
 // Ender
-Casting.addTableRecipe(<contenttweaker:refined_ender_pearl>, null, liquidEnder, 250, false, 100);
+Casting.addTableRecipe(<ore:enderpearl>.firstItem, panHeadCast, liquidEnder, 250, false, 100);
+Casting.addTableRecipe(<ore:enderpearl>.firstItem, panHeadClayCast, liquidEnder, 250, true, 200);
+Casting.addTableRecipe(<contenttweaker:refined_ender_pearl>, panHeadCast, liquidRefinedEnder, 250, false, 200);
+Casting.addTableRecipe(<contenttweaker:refined_ender_pearl>, panHeadClayCast, liquidRefinedEnder, 250, true, 300);
 
 // Obsidian Alloy
 Casting.addTableRecipe(<ore:ingotObsidianEnderAlloy>.firstItem, ingotCast, liquidObsidianAlloy, 144, false, 200);
 Casting.addBasinRecipe(<ore:blockObsidianEnderAlloy>.firstItem, null, liquidObsidianAlloy, 1296, false, 600);
 
+// Redstone
+Casting.addBasinRecipe(<minecraft:redstone_block>, null, liquidRedstone, 1000, false, 1100);
+
+// Glowstone
+Casting.addBasinRecipe(<minecraft:glowstone>, null, liquidGlowstone, 1000, false, 1100);
+
+// Quartz
+Casting.addTableRecipe(<contenttweaker:star_cast>, <contenttweaker:wood_star>, liquidAlubrass, 288, true, 100);
+Casting.addTableRecipe(<contenttweaker:quartz_star>, starCast, liquidQuartz, 1000, false, 600);
+Casting.addBasinRecipe(<ore:blockQuartz>.firstItem, null, liquidQuartz, 1000, false, 1200);
+
 // Blaze
-Casting.addTableRecipe(fireWoodRod, treatedWoodRod, liquidBlaze, 1000, true, 600);
 Casting.addTableRecipe(<minecraft:blaze_rod>, toolRodCast, liquidBlaze, 1000, false, 600);
 Casting.addTableRecipe(<minecraft:blaze_rod>, toolRodClayCast, liquidBlaze, 1000, true, 660);
 
+// Soularium
+Casting.addTableRecipe(<ore:ingotSoularium>.firstItem, ingotCast, liquidSoul, 144, false, 200);
+Casting.addBasinRecipe(<ore:blockSoularium>.firstItem, null, liquidSoul, 1296, false, 1800);
 
-// ~~ Fuel ~~
-
-Fuel.registerFuel(<liquid:blaze>, 20);
+// Witherium
+Casting.addTableRecipe(<ore:ingotWitherium>.firstItem, ingotCast, liquidWither, 144, false, 200);
+Casting.addBasinRecipe(<ore:blockWitherium>.firstItem, null, liquidWither, 1296, false, 1800);
 
 
 // ~~ Melting ~~
@@ -776,7 +806,9 @@ Melting.addRecipe(liquidDiamond * 5994, <ore:blockDiamond>, 1433);
 
 // Ender
 Melting.removeRecipe(liquidEnder);
-Melting.addRecipe(liquidEnder * 250, <contenttweaker:refined_ender_pearl>, 933);
+Melting.removeRecipe(liquidRefinedEnder);
+Melting.addRecipe(liquidEnder * 250, <ore:enderpearl>, 733);
+Melting.addRecipe(liquidRefinedEnder * 250, <contenttweaker:refined_ender_pearl>, 933);
 
 // Obsidian Alloy
 Melting.removeRecipe(liquidObsidianAlloy);
@@ -784,11 +816,53 @@ Melting.addRecipe(liquidObsidianAlloy * 144, <ore:dustObsidianEnderAlloy>, 933);
 Melting.addRecipe(liquidObsidianAlloy * 144, <ore:ingotObsidianEnderAlloy>, 1033);
 Melting.addRecipe(liquidObsidianAlloy * 1296, <ore:blockObsidianEnderAlloy>, 1433);
 
+// Redstone
+Melting.addRecipe(liquidRedstone * 144, <minecraft:redstone>, 600);
+Melting.addRecipe(liquidRedstone * 1296, <minecraft:redstone_block>, 800);
+
+// Glowstone
+Melting.addRecipe(liquidGlowstone * 250, <minecraft:glowstone_dust>, 600);
+Melting.addRecipe(liquidGlowstone * 1000, <minecraft:glowstone>, 800);
+
+// Quartz
+Melting.addRecipe(liquidQuartz * 250, <ore:gemQuartz>, 700);
+Melting.addRecipe(liquidQuartz * 1000, <ore:blockQuartz>, 900);
+
 // Blaze
 Melting.addRecipe(liquidBlaze * 250, <minecraft:blaze_powder>, 900);
 Melting.addRecipe(liquidBlaze * 1000, <minecraft:blaze_rod>, 1300);
 
+// Soularium
+Melting.addRecipe(liquidSoul * 144, <ore:dustSoularium>, 566);
+Melting.addRecipe(liquidSoul * 144, <ore:ingotSoularium>, 666);
+Melting.addRecipe(liquidSoul * 1296, <ore:blockSoularium>, 766);
+
+// Witherarium
+Melting.addRecipe(liquidWither * 144, <ore:dustWitherium>, 2000);
+Melting.addRecipe(liquidWither * 144, <ore:ingotWitherium>, 2500);
+Melting.addRecipe(liquidWither * 1296, <ore:blockWitherium>, 2600);
+
 
 // ~~ Alloying ~~
 
-Alloy.addRecipe(liquidObsidianAlloy * 2, [ liquidObsidian * 1, liquidEnder * 1 ]);
+// Obsidian Alloy
+Alloy.addRecipe(liquidObsidianAlloy * 2, [ liquidObsidian * 1, liquidRefinedEnder * 1 ]);
+
+// Glowstone
+Alloy.addRecipe(liquidGlowstone * 2, [ liquidRedstone * 1, liquidElectrum * 1 ]);
+
+// Ender
+Alloy.addRecipe(liquidEnder * 1, [ liquidDiamond * 2, liquidEmerald * 2 ]);
+
+// Blaze
+Alloy.addRecipe(liquidBlaze * 2, [ liquidGlowstone * 1, lava * 1 ]);
+
+// Witherium
+Alloy.addRecipe(liquidWither * 1, [ liquidSoul * 3, liquidBlaze * 2, liquidUranium * 4 ]);
+
+
+// ~~ Fuel ~~
+
+Fuel.registerFuel(<liquid:blaze>, 20);
+
+*/

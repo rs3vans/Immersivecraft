@@ -11,9 +11,13 @@ furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dynamictrees:oakseed>);
 recipes.remove(<vanillafoodpantry:lava_sand_portion>);
 recipes.remove(<vanillafoodpantry:lava_sand_pack>);
 recipes.remove(<vanillafoodpantry:lava_sand_block>);
-JEI.removeAndHide(<vanillafoodpantry:lava_sand_portion>);
 JEI.removeAndHide(<vanillafoodpantry:lava_sand_pack>);
-JEI.removeAndHide(<vanillafoodpantry:lava_sand_block>);
+recipes.addShaped("immc/lava_sand", <vanillafoodpantry:lava_sand_block> * 8,
+        [ [<ore:sand>, <ore:sand>, <ore:sand>],
+          [<ore:sand>, <ore:itemLavaBucket>.transformReplace(<ore:itemEmptyBucket>.firstItem), <ore:sand>],
+          [<ore:sand>, <ore:sand>, <ore:sand>] ]);
+recipes.addShapeless("immc/lava_sand_portion", <vanillafoodpantry:lava_sand_portion> * 9,
+        [ <vanillafoodpantry:lava_sand_block>, <vanillafoodpantry:bit_pipette>.reuse() ]);
 
 // Heat bits
 recipes.removeByRecipeName("vanillafoodpantry:bit_heat_from_lava_sand");

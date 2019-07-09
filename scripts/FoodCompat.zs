@@ -1,9 +1,12 @@
 #modloaded vanillafoodpantry
 #modloaded immersiveengineering
 #modloaded immersivetech
+#modloaded tconstruct
 #modloaded dynamictrees
 #modloaded dttraverse
 #modloaded ceramics
+
+import mods.tconstruct.Melting;
 
 // Convert from IE salt to VFP salt
 recipes.addShapeless("immc/salt_from_ie_salt", <vanillafoodpantry:salt>,
@@ -18,14 +21,25 @@ furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dttraverse:autumn_brownseed>);
 recipes.remove(<vanillafoodpantry:acornmeal_portion>);
 
 // Water
+val clayWaterBucket = <ceramics:clay_bucket>.withTag({fluids:{FluidName:"water",Amount:1000}});
 recipes.addShapeless("immc/bitowater_clay", <vanillafoodpantry:water_portion> * 32,
-        [ <ceramics:clay_bucket>.withTag({fluids:{FluidName:"water",Amount:1000}}).transformReplace(<ceramics:clay_bucket>),
+        [ clayWaterBucket.transformReplace(<ceramics:clay_bucket>),
           <vanillafoodpantry:bit_pipette>.reuse() ]);
 
 // Heat
+val clayLavaBucket = <ceramics:clay_bucket>.withTag({fluids:{FluidName:"lava",Amount:1000}});
 recipes.addShapeless("immc/bitoheat_clay", <vanillafoodpantry:heat_portion> * 64,
-        [ <ceramics:clay_bucket>.withTag({fluids:{FluidName:"lava",Amount:1000}}),
+        [ clayLavaBucket,
           <vanillafoodpantry:bit_pipette>.reuse() ]);
+
+// Lava Sand
+recipes.addShaped("immc/lava_sand_clay", <vanillafoodpantry:lava_sand_block> * 8,
+        [ [<ore:sand>, <ore:sand>, <ore:sand>],
+          [<ore:sand>, clayLavaBucket, <ore:sand>],
+          [<ore:sand>, <ore:sand>, <ore:sand>] ]);
+
+Melting.addRecipe(<liquid:lava> * 13, <vanillafoodpantry:lava_sand_portion>, 1000);
+Melting.addRecipe(<liquid:lava> * 124, <vanillafoodpantry:lava_sand_block>, 1100);
 
 // Milk
 recipes.addShapeless("immc/bitofmilk_clay", <vanillafoodpantry:milk_portion> * 32,

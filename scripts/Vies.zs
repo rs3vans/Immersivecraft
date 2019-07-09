@@ -1,3 +1,6 @@
+#modloaded vc
+#modloaded immersiveengineering
+
 import mods.jei.JEI;
 import mods.immersiveengineering.AlloySmelter;
 import mods.immersiveengineering.ArcFurnace;
@@ -76,7 +79,7 @@ val glassPane = <ore:paneGlassColorless>;
 val electrumWire = <immersiveengineering:material:21>;
 val diamond = <ore:gemDiamond>;
 val emerald = <ore:gemEmerald>;
-val enderPearl = <ore:enderpearl>;
+val enderPearl = <contenttweaker:refined_ender_pearl>;
 val enderEye = <minecraft:ender_eye>;
 val netherStar = <minecraft:nether_star>;
 
