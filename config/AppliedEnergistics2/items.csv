@@ -2978,8 +2978,14 @@ appliedenergistics2:material:26, Redstone Card
 appliedenergistics2:material:30, Acceleration Card
 appliedenergistics2:material:0, Certus Quartz Crystal
 appliedenergistics2:material:1, Charged Certus Quartz Crystal
+appliedenergistics2:material:2, Certus Quartz Dust
 appliedenergistics2:material:7, Fluix Crystal
+appliedenergistics2:material:8, Fluix Dust
 appliedenergistics2:material:9, Fluix Pearl
+appliedenergistics2:material:51, Gold Dust
+appliedenergistics2:material:49, Iron Dust
+appliedenergistics2:material:3, Nether Quartz Dust
+appliedenergistics2:material:45, Sky Stone Dust
 appliedenergistics2:material:40, Wooden Gear
 appliedenergistics2:part:120, Cable Anchor
 appliedenergistics2:part:20, ME Covered Cable - White
@@ -3096,41 +3102,41 @@ tconstruct:metal:3, Block of Knightslime
 tconstruct:metal:4, Block of Pigiron
 tconstruct:metal:6, Silky Block of Jewel
 tconstruct:pattern:0, Blank Pattern
-tconstruct:pattern:0, Helmet Core Pattern
-tconstruct:pattern:0, Shovel Head Pattern
-tconstruct:pattern:0, Arrow Shaft Pattern
-tconstruct:pattern:0, Leggings Core Pattern
-tconstruct:pattern:0, Kama Head Pattern
-tconstruct:pattern:0, Broad Axe Head Pattern
-tconstruct:pattern:0, Armor Plates Pattern
-tconstruct:pattern:0, Chestplate Core Pattern
-tconstruct:pattern:0, Scythe Head Pattern
-tconstruct:pattern:0, Armor Trim Pattern
-tconstruct:pattern:0, Tool Rod Pattern
-tconstruct:pattern:0, Large Sword Blade Pattern
-tconstruct:pattern:0, Shard Pattern
-tconstruct:pattern:0, Binding Pattern
-tconstruct:pattern:0, Sword Blade Pattern
-tconstruct:pattern:0, Pan Pattern
-tconstruct:pattern:0, Polishing Kit Pattern
-tconstruct:pattern:0, Fletching Pattern
-tconstruct:pattern:0, Tough Tool Rod Pattern
-tconstruct:pattern:0, Sharpening Kit Pattern
-tconstruct:pattern:0, Hand Guard Pattern
-tconstruct:pattern:0, Sign Plate Pattern
 tconstruct:pattern:0, Wide Guard Pattern
-tconstruct:pattern:0, Cross Guard Pattern
-tconstruct:pattern:0, Bowstring Pattern
-tconstruct:pattern:0, Arrow Head Pattern
-tconstruct:pattern:0, Boots Core Pattern
-tconstruct:pattern:0, Knife Blade Pattern
-tconstruct:pattern:0, Bowlimb Pattern
-tconstruct:pattern:0, Axe Head Pattern
-tconstruct:pattern:0, Hammer Head Pattern
-tconstruct:pattern:0, Excavator Head Pattern
-tconstruct:pattern:0, Large Plate Pattern
+tconstruct:pattern:0, Arrow Shaft Pattern
+tconstruct:pattern:0, Kama Head Pattern
+tconstruct:pattern:0, Shard Pattern
+tconstruct:pattern:0, Broad Axe Head Pattern
+tconstruct:pattern:0, Scythe Head Pattern
+tconstruct:pattern:0, Shovel Head Pattern
+tconstruct:pattern:0, Armor Trim Pattern
 tconstruct:pattern:0, Tough Binding Pattern
+tconstruct:pattern:0, Bowstring Pattern
+tconstruct:pattern:0, Sign Plate Pattern
+tconstruct:pattern:0, Tough Tool Rod Pattern
+tconstruct:pattern:0, Chestplate Core Pattern
+tconstruct:pattern:0, Leggings Core Pattern
+tconstruct:pattern:0, Polishing Kit Pattern
+tconstruct:pattern:0, Helmet Core Pattern
+tconstruct:pattern:0, Cross Guard Pattern
+tconstruct:pattern:0, Knife Blade Pattern
+tconstruct:pattern:0, Armor Plates Pattern
+tconstruct:pattern:0, Arrow Head Pattern
+tconstruct:pattern:0, Fletching Pattern
+tconstruct:pattern:0, Tool Rod Pattern
+tconstruct:pattern:0, Bowlimb Pattern
+tconstruct:pattern:0, Hammer Head Pattern
+tconstruct:pattern:0, Hand Guard Pattern
 tconstruct:pattern:0, Pickaxe Head Pattern
+tconstruct:pattern:0, Binding Pattern
+tconstruct:pattern:0, Large Plate Pattern
+tconstruct:pattern:0, Excavator Head Pattern
+tconstruct:pattern:0, Pan Pattern
+tconstruct:pattern:0, Boots Core Pattern
+tconstruct:pattern:0, Axe Head Pattern
+tconstruct:pattern:0, Large Sword Blade Pattern
+tconstruct:pattern:0, Sword Blade Pattern
+tconstruct:pattern:0, Sharpening Kit Pattern
 tconstruct:shard:0, Wooden Shard
 tconstruct:sharpening_kit:0, Wooden Sharpening Kit
 tconstruct:pick_head:0, Wooden Pickaxe Head
@@ -3774,11 +3780,11 @@ engineersdoors:door_steel_reinforced, Steel Door
 engineersdoors:door_treated, Treated Wood Door
 engineersdoors:door_treated_ornate, Treated Wood Door
 engineersdoors:door_treated_reinforced, Treated Wood Door
+engineersdoors:trapdoor_steel, Steel Trapdoor
+engineersdoors:trapdoor_treated, Treated Wood Trapdoor
 engineersdoors:fencegate_aluminium, Aluminum Fence Gate
 engineersdoors:fencegate_steel, Steel Fence Gate
 engineersdoors:fencegate_treated, Treated Wood Fence Gate
-engineersdoors:trapdoor_steel, Steel Trapdoor
-engineersdoors:trapdoor_treated, Treated Wood Trapdoor
 immcraft:chisel, Chisel
 immcraft:saw, Saw
 immcraft:dummybook, Dummy Book
@@ -3845,7 +3851,6 @@ immersivetech:metal_device, tile.immersivetech.metal_device.name
 immersivetech:stone_decoration, tile.immersivetech.stone_decoration.name
 immersivetech:material:0, Salt
 oeintegration:excavatemodifier, Excavate Modifier
-vc:airship_workbench, Airship Workbench
 vc:item_guidebook_main, The 'Vies' Craft, vol.1
 vc:item_dismounter_normal, Dismounter
 vc:item_dismounter_player, Dismounter Player
@@ -3950,6 +3955,7 @@ vc:symbols/item_display_symbol:18, Bell
 vc:symbols/item_display_symbol:19, Anchor
 vc:symbols/item_display_symbol:20, Barrel
 vc:symbols/item_display_symbol:21, Gears
+vc:airship_workbench, Airship Workbench
 weirdinggadget:weirding_gadget, Weirding Gadget
 base:wrench, Wrench
 theoneprobe:probe, The One Probe
