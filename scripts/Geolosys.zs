@@ -13,3 +13,7 @@ JEI.removeAndHide(<geolosys:ore_sample:8>);
 JEI.removeAndHide(<geolosys:ore:8>);
 JEI.removeAndHide(<geolosys:cluster:11>);    // yellorium
 JEI.removeAndHide(<geolosys:cluster:12>);    // osmium
+
+// Rename Quartz
+<geolosys:ore_vanilla:4>.displayName = "Quartz";
+<geolosys:ore_sample_vanilla:4>.displayName = "Quartz Sample";

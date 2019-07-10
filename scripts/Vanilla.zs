@@ -26,6 +26,8 @@ recipes.addShapeless("immc/clay_balls_from_clay", <minecraft:clay_ball> * 4,
 furnace.remove(<minecraft:quartz>);
 JEI.removeAndHide(<minecraft:quartz_ore>);
 
+<minecraft:quartz>.displayName = "Quartz";
+
 // Vanilla tools/armor
 JEI.removeAndHide(<minecraft:wooden_axe>);
 JEI.removeAndHide(<minecraft:wooden_pickaxe>);

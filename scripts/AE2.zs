@@ -5,8 +5,13 @@
 import mods.jei.JEI;
 import mods.appliedenergistics2.Grinder;
 
+// This recipe is WHACK!
 recipes.removeByRecipeName("appliedenergistics2:decorative/fluix_block_pure" as string);
 
+// Rename quartz dust
+<appliedenergistics2:material:3>.displayName = "Quartz Dust";
+
+// Grinder dusts
 val ironDustOre = <ore:dustIron>;
 val ae2IronDust = <appliedenergistics2:material:49>;
 val ieIronDust = <immersiveengineering:metal:18>;
