@@ -11,3 +11,10 @@ options.txt
 saves/
 usercache.json
 usernamecache.json
+
+config/AppliedEnergistics2/CustomRecipes.cfg
+config/AppliedEnergistics2/VersionChecker.cfg
+config/AppliedEnergistics2/items.csv
+config/InvTweaks.cfg
+config/jei/worldSettings.cfg
+config/splash.properties
