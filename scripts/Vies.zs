@@ -79,7 +79,7 @@ val glassPane = <ore:paneGlassColorless>;
 val electrumWire = <immersiveengineering:material:21>;
 val diamond = <ore:gemDiamond>;
 val emerald = <ore:gemEmerald>;
-val enderPearl = <contenttweaker:refined_ender_pearl>;
+val enderPearl = <ore:enderpearl>;
 val enderEye = <minecraft:ender_eye>;
 val netherStar = <minecraft:nether_star>;
 

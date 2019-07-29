@@ -1,9 +1,11 @@
 {
   "savedSubBlockNames": {
     "0": {
-      "0": "witherium_block",
-      "1": "soularium_block",
-      "2": "obsidian_ender_alloy_block"
+      "0": "soulentum_block",
+      "1": "witherium_block",
+      "2": "voidanium_block",
+      "3": "dragonium_block",
+      "4": "sky_steel_block"
     }
   }
 }

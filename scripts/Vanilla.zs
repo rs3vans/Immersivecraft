@@ -22,11 +22,40 @@ recipes.addShaped("immc/logs_to_chests", <minecraft:chest> * 4,
 recipes.addShapeless("immc/clay_balls_from_clay", <minecraft:clay_ball> * 4,
     [ <minecraft:clay> ]);
 
-// Remove nether quartz ore (no world gen anyway)
+// Redstone
+recipes.remove(<minecraft:redstone>);
+recipes.remove(<minecraft:redstone_block>);
+furnace.remove(<minecraft:redstone>);
+
+// Quartz
 furnace.remove(<minecraft:quartz>);
 JEI.removeAndHide(<minecraft:quartz_ore>);
 
 <minecraft:quartz>.displayName = "Quartz";
+
+// Glowstone
+recipes.remove(<minecraft:glowstone>);
+
+// Blaze
+recipes.remove(<minecraft:blaze_powder>);
+
+// Lapis
+recipes.remove(<minecraft:dye:4>);
+recipes.remove(<minecraft:lapis_block>);
+furnace.remove(<minecraft:lapis_ore>);
+
+// Diamond
+recipes.remove(<minecraft:diamond>);
+recipes.remove(<minecraft:diamond_block>);
+furnace.remove(<minecraft:diamond>);
+
+// Emerald
+recipes.remove(<minecraft:emerald>);
+recipes.remove(<minecraft:emerald_block>);
+furnace.remove(<minecraft:emerald>);
+
+// Ender
+recipes.remove(<minecraft:ender_eye>);
 
 // Vanilla tools/armor
 JEI.removeAndHide(<minecraft:wooden_axe>);

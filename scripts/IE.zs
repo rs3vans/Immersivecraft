@@ -1,4 +1,5 @@
 #modloaded immersiveengineering
+#modloaded immersivepetroleum
 
 import mods.jei.JEI;
 import mods.immersiveengineering.AlloySmelter;
@@ -6,11 +7,17 @@ import mods.immersiveengineering.BlastFurnace;
 import mods.immersiveengineering.CokeOven;
 import mods.immersiveengineering.Crusher;
 import mods.immersiveengineering.MetalPress;
+import mods.immersiveengineering.Mixer;
+import mods.immersiveengineering.Refinery;
+import mods.immersiveengineering.Fermenter;
 import mods.immersiveengineering.Squeezer;
 import mods.immersiveengineering.ArcFurnace;
-import mods.immersiveengineering.Blueprint;
+import mods.immersivepetroleum.Distillation;
+import scripts.IEHammer.ieHammerTransformer;
+
 
 val slag = <immersiveengineering:material:7>;
+val hempFiber = <immersiveengineering:material:4>;
 
 val plateMold = <immersiveengineering:mold>;
 val gearMold = <immersiveengineering:mold:1>;
@@ -20,90 +27,54 @@ val packingMold3x3 = <immersiveengineering:mold:6>;
 val unpackingMold = <immersiveengineering:mold:7>;
 
 
-// ~~~ Recipes for progression/difficulty ~~~
+// ~~~ Random ~~~
+
+// not sure where these are coming from...
+JEI.removeAndHide(<forge:bucketfilled>.withTag({FluidName: "uranium", Amount: 1000}));
+JEI.removeAndHide(<forge:bucketfilled>.withTag({FluidName: "constantan", Amount: 1000}));
+
+
+// ~~~ Items ~~~
 
 // Slime balls
 Squeezer.addRecipe(<minecraft:slime_ball>, <liquid:water> * 250, <minecraft:cactus>, 2048);
 
-// Redstone
-recipes.remove(<minecraft:redstone>);
-recipes.remove(<minecraft:redstone_block>);
-furnace.remove(<minecraft:redstone>);
-Crusher.removeRecipesForInput(<minecraft:redstone_ore>);
-MetalPress.addRecipe(<minecraft:redstone_block>, <ore:dustRedstone>, packingMold3x3, 2048, 9);
-MetalPress.addRecipe(<minecraft:redstone> * 9, <ore:blockRedstone>, unpackingMold, 2048);
-
-// Glowstone
-recipes.remove(<minecraft:glowstone>);
-Crusher.removeRecipesForInput(<minecraft:glowstone>);
-AlloySmelter.addRecipe(<minecraft:glowstone_dust> * 2, <minecraft:redstone>, <ore:dustElectrum>, 1536);
-ArcFurnace.addRecipe(<minecraft:glowstone_dust> * 2, <minecraft:redstone>, null, 512, 200, [ <ore:dustElectrum> ]);
-MetalPress.addRecipe(<minecraft:glowstone>, <ore:dustGlowstone>, packingMold2x2, 2048, 4);
-MetalPress.addRecipe(<minecraft:glowstone_dust> * 4, <ore:glowstone>, unpackingMold, 2048);
+// Lava
+Squeezer.addRecipe(null, <liquid:lava> * 250, <minecraft:magma>, 2048);
 
 // Blaze powder/rods
-recipes.remove(<minecraft:blaze_powder>);
-MetalPress.addRecipe(<minecraft:blaze_rod>, <minecraft:blaze_powder>, rodMold, 2048, 6);
+MetalPress.addRecipe(<ore:rodBlaze>.firstItem, <ore:dustBlaze>, rodMold, 2048, 6);
 
-// Hardened Brick
-val hardenedBrick = <contenttweaker:hardened_brick>;
-AlloySmelter.addRecipe(hardenedBrick, <minecraft:clay_ball>, <ore:dustIron>, 120);
+// Redstone
+Crusher.removeRecipesForInput(<minecraft:redstone_ore>);
+MetalPress.addRecipe(<ore:blockRedstone>.firstItem, <ore:dustRedstone>, packingMold3x3, 2048, 9);
+MetalPress.addRecipe(<ore:dustRedstone>.firstItem * 9, <ore:blockRedstone>, unpackingMold, 2048);
 
 // Quartz
-recipes.remove(<minecraft:quartz_block>);
+recipes.remove(<ore:blockQuartz>.firstItem);
 Crusher.removeRecipesForInput(<minecraft:quartz_ore>);
 Crusher.removeRecipesForInput(<minecraft:quartz_block>);
-MetalPress.addRecipe(<minecraft:quartz_block>, <ore:gemQuartz>, packingMold2x2, 2048, 4);
-MetalPress.addRecipe(<minecraft:quartz> * 4, <ore:blockQuartz>, unpackingMold, 2048);
-MetalPress.addRecipe(<contenttweaker:compressed_quartz_1>, <ore:blockQuartz>, packingMold2x2, 4096, 4);
-MetalPress.addRecipe(<ore:blockQuartz>.firstItem * 4, <contenttweaker:compressed_quartz_1>, unpackingMold, 4096);
-MetalPress.addRecipe(<contenttweaker:compressed_quartz_2>, <contenttweaker:compressed_quartz_1>, packingMold2x2, 8192, 4);
-MetalPress.addRecipe(<contenttweaker:compressed_quartz_1> * 4, <contenttweaker:compressed_quartz_2>, unpackingMold, 8192);
-MetalPress.addRecipe(<contenttweaker:compressed_quartz_3>, <contenttweaker:compressed_quartz_2>, packingMold2x2, 16384, 4);
-MetalPress.addRecipe(<contenttweaker:compressed_quartz_2> * 4, <contenttweaker:compressed_quartz_3>, unpackingMold, 16384);
-MetalPress.addRecipe(<contenttweaker:quartz_star>, <contenttweaker:compressed_quartz_3>, gearMold, 32768, 5);
+// MetalPress recipes aren't needed
+
+// Lapis
+furnace.addRecipe(<ore:gemLapis>.firstItem, <ore:dustLapis>, 0.25);
+Crusher.removeRecipesForInput(<minecraft:lapis_ore>);
+MetalPress.addRecipe(<ore:blockLapis>.firstItem, <ore:gemLapis>, packingMold3x3, 2048, 9);
+MetalPress.addRecipe(<ore:gemLapis>.firstItem * 9, <ore:blockLapis>, unpackingMold, 2048);
 
 // Diamond
-recipes.remove(<minecraft:diamond>);
-recipes.remove(<minecraft:diamond_block>);
-furnace.remove(<minecraft:diamond>);
+furnace.addRecipe(<ore:gemDiamond>.firstItem, <ore:dustDiamond>, 0.3);
 Crusher.removeRecipesForInput(<minecraft:diamond_ore>);
 
 // Emerald
-recipes.remove(<minecraft:emerald>);
-recipes.remove(<minecraft:emerald_block>);
-furnace.remove(<minecraft:emerald>);
+furnace.addRecipe(<ore:gemEmerald>.firstItem, <ore:dustEmerald>, 0.3);
 Crusher.removeRecipesForInput(<minecraft:emerald_ore>);
 
 // Ender pearl/eye
-recipes.remove(<minecraft:ender_eye>);
-AlloySmelter.addRecipe(<minecraft:ender_pearl>, <ore:gemDiamond> * 2, <ore:gemEmerald> * 2, 1200);
-BlastFurnace.addRecipe(<contenttweaker:refined_ender_pearl>, <ore:enderpearl>, 1200);
-ArcFurnace.addRecipe(<minecraft:ender_pearl>, <ore:gemDiamond> * 2, null, 512, 800, [ <ore:gemEmerald> * 2 ]);
-ArcFurnace.addRecipe(<contenttweaker:refined_ender_pearl>, <ore:enderpearl>, slag, 256, 1536, [ <ore:dustCoke> * 4 ]);
-ArcFurnace.addRecipe(<minecraft:ender_eye>, <ore:enderpearl>, slag, 768, 1536, [ <minecraft:blaze_powder> * 8, <ore:dustCoke> * 4 ]);
-ArcFurnace.addRecipe(<minecraft:ender_eye>, <contenttweaker:refined_ender_pearl>, null, 512, 1536, [ <minecraft:blaze_powder> * 8 ]);
+Crusher.addRecipe(<ore:dustEnder>.firstItem, <ore:enderpearl>, 1024);
 
-// Obsidian Alloy
-AlloySmelter.addRecipe(<ore:ingotObsidianEnderAlloy>.firstItem, <ore:obsidian>, <contenttweaker:refined_ender_pearl>, 1200);
-ArcFurnace.addRecipe(<ore:ingotObsidianEnderAlloy>.firstItem, <ore:obsidian>, null, 512, 600, [ <contenttweaker:refined_ender_pearl> ]);
-MetalPress.addRecipe(<ore:blockObsidianEnderAlloy>.firstItem, <ore:ingotObsidianEnderAlloy>, packingMold3x3, 8192, 9);
-MetalPress.addRecipe(<ore:ingotObsidianEnderAlloy>.firstItem * 9, <ore:blockObsidianEnderAlloy>, unpackingMold, 8192);
 
-// Soularium
-AlloySmelter.addRecipe(<ore:ingotSoularium>.firstItem, <minecraft:soul_sand>, <ore:dustSteel> * 2, 1000);
-ArcFurnace.addRecipe(<ore:ingotSoularium>.firstItem, <minecraft:soul_sand>, null, 512, 800, [ <ore:dustSteel> * 2 ]);
-MetalPress.addRecipe(<ore:blockSoularium>.firstItem, <ore:ingotSoularium>, packingMold3x3, 8192, 9);
-MetalPress.addRecipe(<ore:ingotSoularium>.firstItem * 9, <ore:blockSoularium>, unpackingMold, 8192);
-
-// Witherium
-MetalPress.addRecipe(<ore:blockWitherium>.firstItem, <ore:ingotWitherium>, packingMold3x3, 8192, 9);
-MetalPress.addRecipe(<ore:ingotWitherium>.firstItem * 9, <ore:blockWitherium>, unpackingMold, 8192);
-
-// Nether Star
-ArcFurnace.addRecipe(<minecraft:nether_star>, <contenttweaker:quartz_star>, null, 4800, 3072, [ <ore:dustWitherium> * 64 ]);
-
-// -- Metals --
+// ~~ Metals ~~
 
 // Iron
 val ironIngot = <minecraft:iron_ingot>;
@@ -120,7 +91,7 @@ recipes.remove(ironNuggetIE);
 recipes.removeShaped(<immersiveengineering:material:1>, [[ironIngot],
                                                          [ironIngot]]);
 ArcFurnace.removeRecipe(ironIngot);
-furnace.addRecipe(ironIngot, <ore:dustIron>);
+furnace.addRecipe(ironIngot, <ore:dustIron>, 0.25);
 ArcFurnace.addRecipe(ironIngot, <ore:dustIron>, null, 60, 512);
 ArcFurnace.addRecipe(ironIngot, <ore:oreIron>, null, 120, 512);
 MetalPress.addRecipe(ironIngot, <ore:nuggetIron>, packingMold3x3, 2048, 9);
@@ -139,7 +110,7 @@ recipes.remove(goldNugget);
 recipes.removeShaped(<immersiveposts:stick_gold>, [[ goldIngot ],
                                                    [ goldIngot ]]);
 ArcFurnace.removeRecipe(goldIngot);
-furnace.addRecipe(goldIngot, <ore:dustGold>);
+furnace.addRecipe(goldIngot, <ore:dustGold>, 0.25);
 ArcFurnace.addRecipe(goldIngot, <ore:dustGold>, null, 60, 512);
 ArcFurnace.addRecipe(goldIngot, <ore:oreGold>, null, 120, 512);
 MetalPress.addRecipe(goldIngot, <ore:nuggetGold>, packingMold3x3, 2048, 9);
@@ -158,7 +129,7 @@ recipes.remove(copperNugget);
 recipes.removeShaped(<immersiveposts:stick_copper>, [[copperIngot],
                                                      [copperIngot]]);
 ArcFurnace.removeRecipe(copperIngot);
-furnace.addRecipe(copperIngot, <ore:dustCopper>);
+furnace.addRecipe(copperIngot, <ore:dustCopper>, 0.25);
 ArcFurnace.addRecipe(copperIngot, <ore:dustCopper>, null, 60, 512);
 ArcFurnace.addRecipe(copperIngot, <ore:oreCopper>, null, 120, 512);
 MetalPress.addRecipe(copperIngot, <ore:nuggetCopper>, packingMold3x3, 2048, 9);
@@ -177,7 +148,7 @@ recipes.remove(aluminumNugget);
 recipes.removeShaped(<immersiveengineering:material:3>, [[aluminumIngot],
                                                          [aluminumIngot]]);
 ArcFurnace.removeRecipe(aluminumIngot);
-furnace.addRecipe(aluminumIngot, <ore:dustAluminum>);
+furnace.addRecipe(aluminumIngot, <ore:dustAluminum>, 0.25);
 ArcFurnace.addRecipe(aluminumIngot, <ore:dustAluminum>, null, 60, 512);
 ArcFurnace.addRecipe(aluminumIngot, <ore:oreAluminum>, null, 120, 512);
 MetalPress.addRecipe(aluminumIngot, <ore:nuggetAluminum>, packingMold3x3, 2048, 9);
@@ -196,7 +167,7 @@ recipes.remove(leadNugget);
 recipes.removeShaped(<immersiveposts:stick_lead>, [[leadIngot],
                                                    [leadIngot]]);
 ArcFurnace.removeRecipe(leadIngot);
-furnace.addRecipe(leadIngot, <ore:dustLead>);
+furnace.addRecipe(leadIngot, <ore:dustLead>, 0.25);
 ArcFurnace.addRecipe(leadIngot, <ore:dustLead>, null, 60, 512);
 ArcFurnace.addRecipe(leadIngot, <ore:oreLead>, null, 120, 512);
 MetalPress.addRecipe(leadIngot, <ore:nuggetLead>, packingMold3x3, 2048, 9);
@@ -215,7 +186,7 @@ recipes.remove(silverNugget);
 recipes.removeShaped(<immersiveposts:stick_silver>, [[silverIngot],
                                                      [silverIngot]]);
 ArcFurnace.removeRecipe(silverIngot);
-furnace.addRecipe(silverIngot, <ore:dustSilver>);
+furnace.addRecipe(silverIngot, <ore:dustSilver>, 0.25);
 ArcFurnace.addRecipe(silverIngot, <ore:dustSilver>, null, 60, 512);
 ArcFurnace.addRecipe(silverIngot, <ore:oreSilver>, null, 120, 512);
 MetalPress.addRecipe(silverIngot, <ore:nuggetSilver>, packingMold3x3, 2048, 9);
@@ -234,7 +205,7 @@ recipes.remove(nickelNugget);
 recipes.removeShaped(<immersiveposts:stick_nickel>, [[nickelIngot],
                                                      [nickelIngot]]);
 ArcFurnace.removeRecipe(nickelIngot);
-furnace.addRecipe(nickelIngot, <ore:dustNickel>);
+furnace.addRecipe(nickelIngot, <ore:dustNickel>, 0.25);
 ArcFurnace.addRecipe(nickelIngot, <ore:dustNickel>, null, 60, 512);
 ArcFurnace.addRecipe(nickelIngot, <ore:oreNickel>, null, 120, 512);
 MetalPress.addRecipe(nickelIngot, <ore:nuggetNickel>, packingMold3x3, 2048, 9);
@@ -253,7 +224,7 @@ recipes.remove(uraniumNugget);
 recipes.removeShaped(<immersiveposts:stick_uranium>, [[uraniumIngot],
                                                       [uraniumIngot]]);
 ArcFurnace.removeRecipe(uraniumIngot);
-furnace.addRecipe(uraniumIngot, <ore:dustUranium>);
+furnace.addRecipe(uraniumIngot, <ore:dustUranium>, 0.25);
 ArcFurnace.addRecipe(uraniumIngot, <ore:dustUranium>, null, 60, 512);
 ArcFurnace.addRecipe(uraniumIngot, <ore:oreUranium>, null, 120, 512);
 MetalPress.addRecipe(uraniumIngot, <ore:nuggetUranium>, packingMold3x3, 2048, 9);
@@ -262,6 +233,7 @@ MetalPress.addRecipe(uraniumBlock, <ore:ingotUranium>, packingMold3x3, 2048, 9);
 MetalPress.addRecipe(uraniumIngot * 9, <ore:blockUranium>, unpackingMold, 2048);
 
 // Constantan
+val constantanDust = <immersiveengineering:metal:15>;
 val constantanIngot = <immersiveengineering:metal:6>;
 val constantanBlock = <immersiveengineering:storage:6>;
 val constantanNugget = <immersiveengineering:metal:26>;
@@ -272,15 +244,14 @@ recipes.remove(constantanNugget);
 recipes.removeShaped(<immersiveposts:stick_constantan>, [[constantanIngot],
                                                          [constantanIngot]]);
 AlloySmelter.removeRecipe(constantanIngot);
-AlloySmelter.addRecipe(constantanIngot, <ore:dustCopper>, <ore:dustNickel>, 200);
 ArcFurnace.removeRecipe(constantanIngot);
-ArcFurnace.addRecipe(constantanIngot, <ore:dustConstantan>, null, 100, 512);
 MetalPress.addRecipe(constantanIngot, <ore:nuggetConstantan>, packingMold3x3, 2048, 9);
 MetalPress.addRecipe(constantanNugget * 9, <ore:ingotConstantan>, unpackingMold, 2048);
 MetalPress.addRecipe(constantanBlock, <ore:ingotConstantan>, packingMold3x3, 2048, 9);
 MetalPress.addRecipe(constantanIngot * 9, <ore:blockConstantan>, unpackingMold, 2048);
 
 // Electrum
+val electrumDust = <immersiveengineering:metal:16>;
 val electrumIngot = <immersiveengineering:metal:7>;
 val electrumBlock = <immersiveengineering:storage:7>;
 val electrumNugget = <immersiveengineering:metal:27>;
@@ -291,9 +262,7 @@ recipes.remove(electrumNugget);
 recipes.removeShaped(<immersiveposts:stick_electrum>, [[electrumIngot],
                                                        [electrumIngot]]);
 AlloySmelter.removeRecipe(electrumIngot);
-AlloySmelter.addRecipe(electrumIngot, <ore:dustGold>, <ore:dustSilver>, 220);
 ArcFurnace.removeRecipe(electrumIngot);
-ArcFurnace.addRecipe(electrumIngot, <ore:dustElectrum>, null, 120, 512);
 MetalPress.addRecipe(electrumIngot, <ore:nuggetElectrum>, packingMold3x3, 2048, 9);
 MetalPress.addRecipe(electrumNugget * 9, <ore:ingotElectrum>, unpackingMold, 2048);
 MetalPress.addRecipe(electrumBlock, <ore:ingotElectrum>, packingMold3x3, 2048, 9);
@@ -317,14 +286,6 @@ MetalPress.addRecipe(steelIngot * 9, <ore:blockSteel>, unpackingMold, 2048);
 // Graphite
 val graphiteIngot = <immersiveengineering:material:19>;
 furnace.remove(graphiteIngot);
-
-
-// -- Multiblocks --
-
-recipes.addShaped("immc/blast_brick", <immersiveengineering:stone_decoration:1>,
-    [ [ hardenedBrick, hardenedBrick, hardenedBrick ],
-      [ hardenedBrick, <minecraft:blaze_powder>, hardenedBrick ],
-      [ hardenedBrick, hardenedBrick, hardenedBrick ] ]);
 
 
 // -- Remove other recipes ---

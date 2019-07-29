@@ -1,8 +1,34 @@
 item.contenttweaker.hardened_brick.name=Hardened Brick
-tile.contenttweaker.compressed_quartz_1.name=Compressed Quartz
-tile.contenttweaker.compressed_quartz_2.name=Double-Compressed Quartz
-tile.contenttweaker.compressed_quartz_3.name=Triple-Compressed Quartz
-item.contenttweaker.quartz_star.name=Quartz Star
-item.contenttweaker.wood_star.name=Wood Star
-item.contenttweaker.star_cast.name=Star Cast
-item.contenttweaker.refined_ender_pearl.name=Refined Ender Pearl
+item.contenttweaker.grout.name=Grout
+
+item.contenttweaker.fired_soul_bucket.name=Dried Soul Distillate
+item.contenttweaker.soulentum_plate.name=Soulentum Plate
+
+item.contenttweaker.endaurum_pearl.name=Endaurum Pearl
+item.contenttweaker.endaurum_dust.name=Endaurum Dust
+item.contenttweaker.endaurum_plate.name=Endaurum Plate
+
+item.contenttweaker.sky_steel_plate.name=Sky Steel Plate
+
+item.contenttweaker.witherium_plate.name=Witherium Plate
+
+item.contenttweaker.voidstone_dust.name=Voidstone Dust
+item.contenttweaker.voidanium_plate.name=Voidanium Plate
+
+item.contenttweaker.dragonium_plate.name=Dragonium Plate
+
+item.contenttweaker.mold_binding.name=Binding Mold
+item.contenttweaker.mold_guard.name=Guard Mold
+item.contenttweaker.mold_sword_blade.name=Sword Blade Mold
+item.contenttweaker.mold_shovel_head.name=Shovel Head Mold
+item.contenttweaker.mold_hatchet_head.name=Hatchet Head Mold
+item.contenttweaker.mold_pick_head.name=Pickaxe Head Mold
+item.contenttweaker.mold_helmet_core.name=Helmet Core Mold
+item.contenttweaker.mold_chest_core.name=Chestplate Core Mold
+item.contenttweaker.mold_leggings_core.name=Leggings Core Mold
+item.contenttweaker.mold_boots_core.name=Boots Core Mold
+
+fluid.soulsludge=Soul Sand Slurry
+fluid.soulessence=Soul Distillate
+fluid.dragonsbreath=Dragon's Breath
+fluid.magmaticdragonium=Magmatic Dragonium

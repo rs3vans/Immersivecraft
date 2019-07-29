@@ -1,6 +1,5 @@
 #modloaded vanillafoodpantry
 #modloaded immersiveengineering
-#modloaded immersivetech
 #modloaded tconstruct
 #modloaded dynamictrees
 #modloaded dttraverse
@@ -8,16 +7,12 @@
 
 import mods.tconstruct.Melting;
 
-// Convert from IE salt to VFP salt
-recipes.addShapeless("immc/salt_from_ie_salt", <vanillafoodpantry:salt>,
-        [ <immersivetech:material> ]);
-
 // Acorns
-furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dynamictrees:oakseed>);
-furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dynamictrees:darkoakseed>);
-furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dttraverse:autumn_orangeseed>);
-furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dttraverse:autumn_redseed>);
-furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dttraverse:autumn_brownseed>);
+furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dynamictrees:oakseed>, 0.1);
+furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dynamictrees:darkoakseed>, 0.1);
+furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dttraverse:autumn_orangeseed>, 0.1);
+furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dttraverse:autumn_redseed>, 0.1);
+furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dttraverse:autumn_brownseed>, 0.1);
 recipes.remove(<vanillafoodpantry:acornmeal_portion>);
 
 // Water
