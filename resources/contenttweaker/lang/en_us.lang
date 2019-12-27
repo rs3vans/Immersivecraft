@@ -1,8 +1,18 @@
+item.contenttweaker.grout.name=Grout
 item.contenttweaker.hardened_brick.name=Hardened Brick
-tile.contenttweaker.compressed_quartz_1.name=Compressed Quartz
-tile.contenttweaker.compressed_quartz_2.name=Double-Compressed Quartz
-tile.contenttweaker.compressed_quartz_3.name=Triple-Compressed Quartz
-item.contenttweaker.quartz_star.name=Quartz Star
-item.contenttweaker.wood_star.name=Wood Star
-item.contenttweaker.star_cast.name=Star Cast
-item.contenttweaker.refined_ender_pearl.name=Refined Ender Pearl
+
+item.contenttweaker.sawdust.name=Wood Pulp
+item.contenttweaker.soaked_leather.name=Soaked Leather
+
+item.contenttweaker.nether_star_dust.name=Nether Star Dust
+
+fluid.tannicacid=Tannic Acid
+
+fluid.prismarinesolution=Prismarine Solution
+
+fluid.soulsludge=Soul Sand Sludge
+fluid.soulessence=Soul Essence
+
+fluid.chorusjuice=Chorus Juice
+fluid.dragonjuice=Dragon Juice
+fluid.dragonsbreath=Dragon's Breath

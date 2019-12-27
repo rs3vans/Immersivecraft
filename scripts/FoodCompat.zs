@@ -1,23 +1,19 @@
 #modloaded vanillafoodpantry
 #modloaded immersiveengineering
-#modloaded immersivetech
-#modloaded tconstruct
+#modloaded 
 #modloaded dynamictrees
 #modloaded dttraverse
 #modloaded ceramics
 
-import mods.tconstruct.Melting;
-
-// Convert from IE salt to VFP salt
-recipes.addShapeless("immc/salt_from_ie_salt", <vanillafoodpantry:salt>,
-        [ <immersivetech:material> ]);
+import mods.immersiveengineering.Crusher;
+import scripts.IEHammer.ieHammerTransformer;
 
 // Acorns
-furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dynamictrees:oakseed>);
-furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dynamictrees:darkoakseed>);
-furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dttraverse:autumn_orangeseed>);
-furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dttraverse:autumn_redseed>);
-furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dttraverse:autumn_brownseed>);
+furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dynamictrees:oakseed>, 0.1);
+furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dynamictrees:darkoakseed>, 0.1);
+furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dttraverse:autumn_orangeseed>, 0.1);
+furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dttraverse:autumn_redseed>, 0.1);
+furnace.addRecipe(<vanillafoodpantry:oak_acorn>, <dttraverse:autumn_brownseed>, 0.1);
 recipes.remove(<vanillafoodpantry:acornmeal_portion>);
 
 // Water
@@ -38,9 +34,6 @@ recipes.addShaped("immc/lava_sand_clay", <vanillafoodpantry:lava_sand_block> * 8
           [<ore:sand>, clayLavaBucket, <ore:sand>],
           [<ore:sand>, <ore:sand>, <ore:sand>] ]);
 
-Melting.addRecipe(<liquid:lava> * 13, <vanillafoodpantry:lava_sand_portion>, 1000);
-Melting.addRecipe(<liquid:lava> * 124, <vanillafoodpantry:lava_sand_block>, 1100);
-
 // Milk
 recipes.addShapeless("immc/bitofmilk_clay", <vanillafoodpantry:milk_portion> * 32,
         [ <ceramics:clay_bucket>.withTag({fluids:{FluidName:"milk",Amount:1000}}).transformReplace(<ceramics:clay_bucket>),
@@ -59,3 +52,12 @@ recipes.addShaped("immc/sandwich_press", <vanillafoodpantry:sandwich_press_plate
         [ [ null, <ore:plateSteel>, <ore:plateSteel> ],
           [ <immersiveengineering:material:9> , null, null ],
           [ null, <ore:plateSteel>, <ore:plateSteel> ] ]);
+
+// Salt
+recipes.addShapeless("immc/salt_with_hammer", <vanillafoodpantry:salt> * 6,
+        [ <vanillafoodpantry:rock_salt_crystals>, ieHammerTransformer ]);
+recipes.addShapeless("immc/baking_soda_with_hammer", <vanillafoodpantry:baking_soda> * 6,
+        [ <vanillafoodpantry:natron_crystals>, ieHammerTransformer ]);
+
+Crusher.addRecipe(<vanillafoodpantry:salt> * 8, <vanillafoodpantry:rock_salt_crystals>, 2000, <vanillafoodpantry:salt> * 2, 0.5);
+Crusher.addRecipe(<vanillafoodpantry:baking_soda> * 8, <vanillafoodpantry:natron_crystals>, 2000, <vanillafoodpantry:baking_soda> * 2, 0.5);

@@ -1,13 +1,23 @@
 {
   "materialMappings": {
-    "soularium_ingot": 3,
-    "obsidian_ender_alloy_dust": 0,
-    "witherium_block": 7,
-    "soularium_block": 4,
-    "obsidian_ender_alloy_ingot": 1,
-    "witherium_dust": 5,
-    "soularium_dust": 2,
-    "witherium_ingot": 6,
-    "obsidian_ender_alloy_block": 8
+    "vibrant_alloy_plate": 12,
+    "emerald_dust": 2,
+    "stellar_alloy_dust": 17,
+    "steel_armor": 0,
+    "crystalline_alloy_dust": 13,
+    "melodic_alloy_dust": 15,
+    "crystalline_alloy_plate": 14,
+    "energetic_alloy_dust": 9,
+    "melodic_alloy_plate": 16,
+    "vibrant_alloy_dust": 11,
+    "end_steel_plate": 8,
+    "soularium_plate": 4,
+    "end_stone_dust": 3,
+    "dark_steel_dust": 5,
+    "stellar_alloy_plate": 18,
+    "diamond_dust": 1,
+    "end_steel_dust": 7,
+    "energetic_alloy_plate": 10,
+    "dark_steel_plate": 6
   }
 }
